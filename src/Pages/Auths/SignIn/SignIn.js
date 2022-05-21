@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import ResetPass from '../ResetPassword/ResetPass';
@@ -6,12 +6,14 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import './SignIn.modules.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import Loading from '../../Shared/Loading/Loading';
+import { toast } from 'react-toastify';
 
 
 
 const SignIn = () => {
 
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
         signInWithEmailAndPassword,
         user,
@@ -20,14 +22,31 @@ const SignIn = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
 
+    useEffect(() => {
+        if (error) {
+
+            toast.error((error.code), {
+                position: toast.POSITION.TOP_CENTER
+            })
+        }
+    }, [error])
+
+    if (loading) {
+        return <div className="mt-52">
+            <Loading />;
+        </div>
+    }
+
+
     const onSubmit = data => {
         console.log(data);
         const { email, password } = data;
         signInWithEmailAndPassword(email, password);
+        reset();
     }
 
     return (
-        <div className='mt-8 mx-4'>
+        <div className='mt-8 mx-4 body'>
             <div className="formbg">
                 <div className="p-12">
                     <span className="pb-6">Sign in to your account</span>

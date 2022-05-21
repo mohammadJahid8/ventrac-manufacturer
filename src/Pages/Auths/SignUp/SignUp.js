@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
@@ -14,6 +16,22 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
+
+
+    useEffect(() => {
+        if (error) {
+            toast.error((error.code), {
+                position: toast.POSITION.TOP_CENTER
+            })
+        }
+    }, [error])
+
+    if (loading) {
+        return <div className="mt-52">
+            <Loading />;
+        </div>
+    }
 
     const onSubmit = (data) => {
         console.log(data);

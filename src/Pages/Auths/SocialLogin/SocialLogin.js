@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
@@ -10,11 +10,13 @@ import Loading from '../../Shared/Loading/Loading';
 const SocialLogin = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-    if (googleError) {
-        toast.error('Error while signing in with Google', {
-            position: toast.POSITION.TOP_CENTER
-        })
-    }
+    useEffect(() => {
+        if (googleError) {
+            toast.error((googleError.code), {
+                position: toast.POSITION.TOP_CENTER
+            })
+        }
+    }, [googleError])
 
 
     if (googleLoading) {
