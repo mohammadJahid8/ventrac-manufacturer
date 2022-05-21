@@ -107,7 +107,7 @@ const SignUp = () => {
             <div className="footer-link pt-6">
                 <span>Already have an account? <Link className="cursor-pointer" to='/signin'>Sign In</Link></span>
                 <div className="listing py-6 flex-flex center-center">
-                    <span><a href="#">© Stackfindover</a></span>
+                    <span><a href="#">© Mohammad Jahid</a></span>
                     <span><a href="#">Contact</a></span>
                     <span><a href="#">Privacy &amp; terms</a></span>
                 </div>
