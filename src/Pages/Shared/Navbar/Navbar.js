@@ -49,11 +49,12 @@ const Navbar = ({ children }) => {
                             {/* <!-- Navbar menu content here --> */}
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/notfound'>Navbar Item 1</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signup'>Sign Up</NavLink></li>
-                            {user ?
-                                <li ><button>Sign Out</button></li>
+                            <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
+                            {/* {user ?
+                                <li ><button className=' btn-sm mt-2 rounded-xl mr-1'>Sign Out</button></li>
                                 :
                                 <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
-                            }
+                            } */}
 
                             <label class="swap swap-rotate " onClick={toggleDark}>
                                 <input type="checkbox" onClick={() => setDark(!dark)} />

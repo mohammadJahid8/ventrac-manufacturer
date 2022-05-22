@@ -9,13 +9,17 @@ import Navbar from './Pages/Shared/Navbar/Navbar';
 import Test from './Pages/Test';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from './Pages/HomePage/Home/Home';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
     <div className="">
       <Navbar>
         <Routes>
-          <Route path="/" element={<SignIn />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/blogs" element={<Blogs />} />
+
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />

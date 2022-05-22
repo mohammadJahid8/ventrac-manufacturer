@@ -99,10 +99,10 @@ const SignIn = () => {
 
                             <div className="mb-6">
                                 <label for="my-modal-6" className="hover:underline text-blue-600">Forgot your password?</label>
-                                <ResetPass />
                             </div>
-                        </div>
 
+
+                        </div>
 
                         <div className="field">
                             <input type="submit" value='Sign In' name="submit" className="btn btn-primary" />
@@ -113,6 +113,7 @@ const SignIn = () => {
                         </div>
 
                     </form>
+
                 </div>
             </div>
             <div className="footer-link pt-6">
@@ -123,7 +124,9 @@ const SignIn = () => {
                     <span><a href="#">Privacy &amp; terms</a></span>
                 </div>
             </div>
-
+            <div className="field">
+                <ResetPass />
+            </div>
         </div>
 
     );
