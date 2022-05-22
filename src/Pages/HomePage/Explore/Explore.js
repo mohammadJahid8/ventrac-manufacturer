@@ -8,7 +8,7 @@ const Explore = () => {
             <div className="flex items-center justify-around md:flex-row flex-col py-12 space-y-4 md:space-y-0 w-full">
                 <div className="hidden md:block">
                     <img className="hidden xl:block w-full" src={bannerImg1} alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1" />
-                    <img className="xl:hidden w-full" src={bannerImg1} alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1-1" />
+                    <img className="xl:hidden w-full" src={bannerImg2} alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1-1" />
                 </div>
                 <div className="flex justify-center items-center flex-col xl:w-2/5 md:px-6 sm:w-3/4 md:w-2/4">
                     <div className="">
@@ -26,11 +26,11 @@ const Explore = () => {
                 <div className="flex md:w-auto w-full justify-center flex-row space-x-4 md:space-x-0">
                     <div className="w-full">
                         <img className="hidden xl:block w-full" src={bannerImg2} alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1" />
-                        <img className="xl:hidden w-full" src={bannerImg2} alt="sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-1" />
+                        <img className="xl:hidden w-full" src={bannerImg1} alt="sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-1" />
                     </div>
                     <div className="md:hidden w-full">
-                        <img className="hidden xl:block w-full" src={bannerImg2} alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1" />
-                        <img className="xl:hidden w-full" src={bannerImg2} alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1-1" />
+                        <img className="hidden md:block w-full" alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1" src={bannerImg1}/>
+                        <img className="xl:hidden w-full" alt="behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1-1" src={bannerImg2} />
                     </div>
                 </div>
             </div>
