@@ -1,0 +1,85 @@
+[
+    {
+        "sold": 19,
+        "name": "T-Wolf Gaming Mouse",
+        "supplier": "T-Wolf",
+        "quantity": 12,
+        "price": 90,
+        "image": "https://static-01.daraz.com.bd/p/mdc/689f6962dc063db2df4a564e5c2b6b51.png",
+        "description": "V6 Gaming Mouse With DPI Button and multi-color lighting modes comfortable rubber coated surface for better grip"
+    },
+    {
+        "sold": 13,
+        "name": "Lenovo Air pod",
+        "supplier": "Lenevo",
+        "quantity": 8,
+        "price": 100,
+        "image": "https://static-01.daraz.com.bd/p/97decff1cbf58acea6d1debccb65e557.jpg",
+        "description": "Lenovo LivePods LP1S comes with a high sound quality 6mm composite membrane speaker. It has a frequency range of 20Hz-20KHz. Exquisite and compact appearance, high charging speed."
+    },
+    {
+        "sold": 15,
+        "name": "Realme narzo 50A Prime",
+        "supplier": "Realme",
+        "quantity": 5,
+        "price": 280,
+        "image": "https://static-01.daraz.com.bd/p/d2894ba6c97c35e57c065c01fb7a87f4.png",
+        "description": "Realme Narzo 50A Prime comes with 6.6 inches screen. Its base variant has a ram and storage of 6GB, 64GB / 128GB. The back camera is of 50 MP (f/1.8) + 2 MP (f/2.4, macro) + 3 MP (f/2.8). The front camera is of 8 MP. It has a decent battery of Non-Removable Battery 5000 mAh, Li-Po Battery"
+    },
+    {
+        "sold": 17,
+        "name": "Imilab kw66 SmartWatch",
+        "supplier": "Imilab",
+        "quantity": 22,
+        "price": 150,
+        "image": "https://static-01.daraz.com.bd/p/895fee062d25fafc68cd09a0652c0005.jpg",
+        "description": "Imilab KW66 Multifunctional Watch is a gadget that will help in everyday life. Modern design with zinc alloy and IML coated case back give it a stylish look."
+    },
+    {
+        "sold": 18,
+        "name": "HP SPECTRE X360 16",
+        "supplier": "HP",
+        "quantity": 7,
+        "price": 800,
+        "image": "https://static-01.daraz.com.bd/p/bce5efac928e21b10a758bb0b3dbd83a.png",
+        "description": "The HP has a quad-core, 3.4GHz (5.0GHz turbo) Intel Core i7-11390H processor and 16GB of RAM. This have 512GB NVMe solid-state drive, Intel Iris Xe integrated graphics, and an IPS display with 3,072-by-1,920-pixel resolution."
+    },
+    {
+        "sl": 6,
+        "sold": 13,
+        "name": "HP 280 Pro G6 MT Core i3 10th Gen Microtower PC",
+        "supplier": "HP",
+        "quantity": 4,
+        "price": 460,
+        "image": "https://static-01.daraz.com.bd/p/d9e51c6ee58f0957c12244208caecf00.jpg",
+        "description": "HP 280 Pro G6 MT Core i3 10th Gen Microtower PC comes with Intel 10th Gen Core i3-10100 Processor-3.6GHz Turbo Boost 4.3GHz (6MB Cache), Intel H470 Chipset, 4GB DDR4 RAM-2666MHz RAM, 1TB SATA-7200rpm HDD and Intel 630 Graphics with Free DOS Operating System."
+    },
+    {
+        "sold": 15,
+        "name": "Whirlpool Microwave Oven",
+        "supplier": "Whirlpool",
+        "quantity": 8,
+        "price": 250,
+        "image": "https://static-01.daraz.com.bd/p/ca320b7e4bfb473c8557efa308c63be5.jpg",
+        "description": "Whirlpool Magic Cook Elite 30L Microwave Oven is available at Best Electronics in Bangladesh. Whirlpool Magic Cook Elite 30  litres Convection Microwave Oven comes with lots of useful features to ensure you a pleasant cooking experience."
+    },
+    {
+        "sold": 10,
+        "name": "SAMSUNG RB21KMFH5SK/D3 Refrigerator",
+        "supplier": "Samsung",
+        "quantity": 9,
+        "min-order": 9,
+        "price": 750,
+        "image": "https://static-01.daraz.com.bd/p/9a904fc661a6bb681a54d1e3ffec5dc6.jpg",
+        "description": "SAMSUNG RB21KMFH5SK/D3 Refrigerator comes with very attractive design. The material used in it will meet your expectation and need also. Now with a new look it is even better than before and its quality will definitely meet your desire. So you may take this to bring smile and enjoy the feel of good quality product."
+    },
+    {
+        "sold": 18,
+        "name": "BRAVIA XR™",
+        "supplier": "Sony",
+        "quantity": 20,
+        "price": 450,
+        "image": "https://static-01.daraz.com.bd/p/30951bb2d63fa96b1455e2d5afbef1bb.jpg",
+        "description": "Our BRAVIA XR™ TV takes vision and sound to the next level with the ingenious Cognitive Processor XR. It understands how humans see and hear, providing a whole new experience that immerses you completely in the scene."
+    }
+]

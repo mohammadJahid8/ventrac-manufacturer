@@ -46,8 +46,8 @@ const Navbar = ({ children }) => {
 
                     <div class="flex-none hidden lg:block">
                         <ul class="menu menu-horizontal">
-                            {/* <!-- Navbar menu content here --> */}
-                            <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/notfound'>Navbar Item 1</NavLink></li>
+                            
+                            <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/'>Home</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signup'>Sign Up</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
                             {/* {user ?

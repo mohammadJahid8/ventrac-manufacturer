@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
-import google from '../../../social/google.png';
+import google from '../../../images/social/google.png';
 import Loading from '../../Shared/Loading/Loading';
 
 
