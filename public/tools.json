@@ -3,7 +3,7 @@
         "sold": 19,
         "name": "Straight Claw Hammer",
         "quantity": 550,
-        "min-order": 80,
+        "minOrder": 80,
         "price": 10,
         "image": "https://s.alicdn.com/@sc04/kf/H93270f9bf4fb4001a9d3fa3d528480beG.jpg_300x300.jpg",
         "description": "Multi Function Tool 16oz One Piece Forged Straight Claw Hammer with Steel Handle,Solid forged one piece, hardened and tempered.HRC>48,Fully polished and lacquered.Solid forged head with shock-absorbing to reduce vibrations when striking,"
@@ -12,25 +12,16 @@
         "sold": 19,
         "name": "Bicycle Repair Tool",
         "quantity": 600,
-        "min-order": 100,
+        "minOrder": 100,
         "price": 3,
         "image": "https://s.alicdn.com/@sc04/kf/H5ed5922e99c845f797cbf82755c95a7fF.jpg_300x300.jpg",
         "description": "16 function all in one tool:Socket Hex Wrench 8/9/10/mm,Slotted Screwdriver,Phillips Screwdriver,Socket Extension .It can help you fix most Problems of Your Bike With This Kit.With good quality, durable,full function."
     },
     {
         "sold": 19,
-        "name": "Dual Ring Wrench and Screwdriver",
-        "quantity": 500,
-        "min-order": 60,
-        "price": 40,
-        "image": "https://s.alicdn.com/@sc04/kf/H0171e1bf5b4c4ca79b3bffa753da0e9cE.png_300x300.png",
-        "description": "Dual Ring Wrench and Screwdriver Manufactured from long-lasting, durable materials, drop forged and hardened treated.Includes nylon roll-up case for convenient storage and portability."
-    },
-    {
-        "sold": 19,
         "name": "Portable Electric Screwdriver",
         "quantity": 400,
-        "min-order": 100,
+        "minOrder": 100,
         "price": 17,
         "image": "https://s.alicdn.com/@sc04/kf/U91116602b0144abea1607c1f2ddf5bcbB.jpg_300x300.jpg",
         "description": "HOTSelling S2 20 bits Portable electric screwdriver Tools for repairing mobile phones, eyeglasses, computers with AAA battery.Works continuously for 3 –5 hours, Manual/automatic mode with 0.12/3N.m torque. Includes 20Pcs S2 steel screwdriver bits."
@@ -39,7 +30,7 @@
         "sold": 19,
         "name": "Soldering Iron",
         "quantity": 600,
-        "min-order": 70,
+        "minOrder": 70,
         "price": 6,
         "image": "https://s.alicdn.com/@sc04/kf/HTB1.41cB2iSBuNkSnhJq6zDcpXag.jpg_300x300.jpg",
         "description": "BST-102D temperature controlled soldering iron ceramic heaters portable soldering gun iron with suction soldering tips,Small size and light handle, easy to carry,3 different soldering tips as accessory..Accept small order and OEM order "
@@ -48,7 +39,7 @@
         "sold": 19,
         "name": "Precision Screwdriver Set",
         "quantity": 500,
-        "min-order": 80,
+        "minOrder": 80,
         "price": 15,
         "image": "https://s.alicdn.com/@sc04/kf/HTB1X1hni25TBuNjSspmq6yDRVXat.jpg_300x300.jpg",
         "description": "20pc Precision Screwdriver Bit. Slotted:1mm,1.5mm,2mm,2.5mm,3mm, Hex:1.3mm,1.5mm,2mm,2.5mm,3mm,Torx:T6,T7,T8,T9,T10 ,1pc Extendable Precision Screwdriver Handle,1pc 3 Long Nose Plier 1pc 3 Diagonal Cutting Plier"
@@ -57,16 +48,25 @@
         "sold": 19,
         "name": "Hammer Drill Machine",
         "quantity": 550,
-        "min-order": 80,
+        "minOrder": 80,
         "price": 10,
-        "image": "https://s.alicdn.com/@sc04/kf/H93270f9bf4fb4001a9d3fa3d528480beG.jpg_300x300.jpg",
+        "image": "https://s.alicdn.com/@sc04/kf/H151b04970346449290b938246982c505c.png_220x220.png_.webp",
         "description": "GRANDFAR GBH 220 v electric rotary hammer drill machine sds 900w. Contain Electronic speed adjustment, 3 dunction modes（drilling/impact drilling/chiselling, Lock-on function, Reverse clutch."
+    },
+    {
+        "sold": 19,
+        "name": "Dual Ring Wrench and Screwdriver",
+        "quantity": 500,
+        "minOrder": 60,
+        "price": 40,
+        "image": "https://s.alicdn.com/@sc04/kf/H0171e1bf5b4c4ca79b3bffa753da0e9cE.png_300x300.png",
+        "description": "Dual Ring Wrench and Screwdriver Manufactured from long-lasting, durable materials, drop forged and hardened treated.Includes nylon roll-up case for convenient storage and portability."
     },
     {
         "sold": 19,
         "name": "Double Speed electric Drill Machine",
         "quantity": 700,
-        "min-order": 80,
+        "minOrder": 80,
         "price": 30,
         "image": "https://s.alicdn.com/@sc01/kf/H06dd361e5db144629e3eaf95ca15d6e01.png_480x480.png",
         "description": "GRANDFAR GBM double speed electric drill machine set hand tools kit 280W 30mm"
