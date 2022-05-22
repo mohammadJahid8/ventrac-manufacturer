@@ -1,6 +1,6 @@
 import React from 'react';
-import bannerImg1 from '../../../images/banner/1.png';
-import bannerImg2 from '../../../images/banner/2.png';
+import bannerImg1 from '../../../images/banner/banner-1.png';
+import bannerImg2 from '../../../images/banner/banner-2.png';
 
 const Explore = () => {
     return (
