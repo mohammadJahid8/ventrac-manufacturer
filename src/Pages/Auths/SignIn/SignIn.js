@@ -12,7 +12,6 @@ import { toast } from 'react-toastify';
 
 
 const SignIn = () => {
-
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
         signInWithEmailAndPassword,
@@ -21,10 +20,10 @@ const SignIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+
+    //navigating the user from the previous page after login
     let navigate = useNavigate();
     let location = useLocation();
-
-
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
@@ -42,15 +41,15 @@ const SignIn = () => {
         }
     }, [error])
 
+
     if (loading) {
-        return <div className="mt-52">
+        return <div className="my-52">
             <Loading />;
         </div>
     }
 
 
     const onSubmit = data => {
-        console.log(data);
         const { email, password } = data;
         signInWithEmailAndPassword(email, password);
         reset();

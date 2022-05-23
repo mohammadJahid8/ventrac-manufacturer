@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
@@ -9,7 +9,6 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
@@ -19,6 +18,18 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 
+    //navigating the user from the previous page after login
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user, from, navigate]);
+
+
     useEffect(() => {
         if (error) {
             toast.error((error.code), {
@@ -26,9 +37,10 @@ const SignUp = () => {
             })
         }
     }, [error])
+    
 
     if (loading) {
-        return <div className="mt-52">
+        return <div className="my-52">
             <Loading />;
         </div>
     }
