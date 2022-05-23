@@ -98,7 +98,7 @@ const SignIn = () => {
                             </div>
 
                             <div className="mb-6">
-                                <label for="my-modal-6" className="hover:underline text-blue-600">Forgot your password?</label>
+                                <label for="my-modal-6" className="hover:underline text-blue-600 inline-block">Forgot your password?</label>
                             </div>
 
 

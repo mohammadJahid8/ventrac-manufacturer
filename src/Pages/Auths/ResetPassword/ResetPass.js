@@ -25,7 +25,7 @@ const ResetPass = () => {
                 <div class="modal-box">
                     <label for="my-modal-6" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <form onClick={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="">
                             <label htmlFor="email" className="font-bold text-lg">Enter Your Email to Reset Password</label>
                             <input
@@ -48,8 +48,12 @@ const ResetPass = () => {
                             </label>
                         </div>
 
-                        <div>
-                            <input type="submit" value='Send Reset Email' name="submit" className="btn btn-primary" />
+                        <div >
+                            <label htmlFor="my-modal-6">
+
+                                <input type="submit" value='Send Reset Email' name="submit" className="btn btn-primary" />
+                            </label>
+
                         </div>
                     </form>
 

@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
+import auth from '../../firebase.init';
 
 const Purchase = () => {
     const [disabled, setDisabled] = useState(false);
     const [quantity, setQuantity] = useState();
+    const [user] = useAuthState(auth);
+
+
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const orderQuantityChange = (event) => {
         const inputQuantity = event.target.value;
         setQuantity(inputQuantity);
+    }
 
-
+    const onSubmit = (data) => {
+        const newData = { ...data, quantity: quantity, name: user.displayName, email: user.email };
+        reset();
     }
 
     return (
         <div className="flex justify-center items-center">
-            <div className="py-16 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container">
+            <div className="pt-10 pb-16 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container">
                 <div className="flex flex-col justify-start items-start w-full space-y-9">
                     <div className="flex justify-start flex-col items-start space-y-2">
                         <button className="flex flex-row items-center text-gray-600 hover:text-gray-500 space-x-1">
@@ -25,7 +35,6 @@ const Purchase = () => {
                             <p className="text-sm leading-none">Back</p>
                         </button>
                         <p className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800">Checkout</p>
-
                     </div>
 
                     <div className="flex flex-col xl:flex-row justify-center xl:justify-between space-y-6 xl:space-y-0 xl:space-x-6 w-full">
@@ -49,56 +58,100 @@ const Purchase = () => {
                                 Please provide necessary informations to purchase
                             </p>
 
-                            <div className="mt-4">
-                                <input className="border border-gray-300 p-4 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600" type="text" placeholder="Your name" />
-                            </div>
-                            <div className="mt-8">
-                                <input className="border border-gray-300 p-4 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600" type="email" placeholder="Email" />
-                            </div>
 
-                            <div className="mt-8">
-                                <input className=" border rounded-bl border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600" type="text" placeholder="Address" />
-                                <input className="mt-8 border rounded-br border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600" type="number" placeholder="Phone Number" />
-                            </div>
-
-
-
-                            <div className="mt-2 flex-col">
-                                <p className='font-semibold mb-3 mt-6'>Available Quantity: 500</p>
-                                <p className='font-semibold mb-3'>Minimum Order: 100pcs</p>
-                                <div>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <div className="mt-4">
                                     <input
-                                        onChange={orderQuantityChange}
-                                        className="border rounded border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600"
+                                        className="border border-gray-300 p-4 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
+                                        type="text"
+                                        disabled
+
+                                        value={user?.displayName}
+                                        {...register("name")}
+                                    />
+                                </div>
+                                <div className="mt-4">
+                                    <input
+                                        className="border border-gray-300 p-4 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
+                                        type="email"
+                                        // placeholder="Email"
+                                        disabled
+                                        value={user?.email}
+                                        {...register("email")}
+                                    />
+                                </div>
+
+                                <div className="mt-4">
+                                    <input
+                                        className=" border rounded-bl border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600"
+                                        type="text"
+                                        placeholder="Address"
+                                        required
+                                        {...register("address")}
+                                    />
+
+                                    <input
+                                        className="mt-4 border rounded-br border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600"
                                         type="number"
-                                        placeholder="Order Quantity"
-                                        min="100" max="500" />
-                                    {quantity < 100
+                                        placeholder="Phone Number"
+                                        required
+                                        {...register("number")}
+                                    />
+
+                                </div>
+
+                                <div className="mt-2 flex-col">
+                                    <p className='font-semibold mb-3 mt-6'>Available Quantity: 500</p>
+
+                                    <p className='font-semibold mb-3 mt-3'>Per Unit Price: $50</p>
+
+                                    {
+                                        (quantity > 100 || quantity < 500)
                                         &&
-                                        <p className="text-red-500 text-sm">Minimum order 100pcs</p>
+                                        <p className='font-semibold mb-3'>My Order Quantity: {quantity}</p>
                                     }
                                     {
-                                        quantity > 500
-                                        &&
-                                        <p className="text-red-500 text-sm">Maximum order 500pcs</p>
-                                    }
+                                        (quantity > 100 || quantity < 500) &&
+                                        < p className='font-semibold mb-3 mt-3'>Total Price: ${quantity * 50}</p>}
+
+                                    <div>
+                                        <input
+                                            onChange={orderQuantityChange}
+                                            className="border rounded border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600"
+                                            type="number"
+                                            placeholder="Minimum Order 100pcs"
+                                            required
+
+                                        />
+
+                                        {quantity < 100
+                                            &&
+                                            <p className="text-red-500 text-sm">Minimum order 100pcs</p>
+                                        }
+                                        {
+                                            quantity > 500
+                                            &&
+                                            <p className="text-red-500 text-sm">Maximum order 500pcs</p>
+                                        }
+                                    </div>
                                 </div>
-                            </div>
 
 
 
-                            <button
-                                disabled={(quantity < 100 || quantity > 500) && !disabled}
-                                className="mt-8 border border-transparent text-white btn btn-primary flex justify-center items-center py-4 rounded w-full">
-                                <div>
-                                    <p className="text-base leading-4">Place Order</p>
-                                </div>
-                            </button>
+                                <button
+                                    type="submit"
+                                    disabled={(quantity < 100 || quantity > 500) && !disabled}
+                                    className="mt-8 border border-transparent text-white btn btn-primary flex justify-center items-center py-4 rounded w-full">
+                                    <div>
+                                        <p className="text-base leading-4">Place Order</p>
+                                    </div>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

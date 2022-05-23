@@ -6,6 +6,7 @@ import auth from '../../../firebase.init';
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
     const [user] = useAuthState(auth);
+    
 
 
     //implemented dark mode  
@@ -34,7 +35,9 @@ const Navbar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col ">
                 <div class="w-full navbar  lg:px-6">
-                    <div class="flex-1 px-2 mx-2">Navbar Title</div>
+                    <div class="flex-1 px-2 mx-2">
+                        <img src="https://toolsinaction.com/wp-content/uploads/2008/08/Ventrac-Logo.png" alt="" className='w-28'/>
+                    </div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
@@ -46,15 +49,15 @@ const Navbar = ({ children }) => {
 
                     <div class="flex-none hidden lg:block">
                         <ul class="menu menu-horizontal">
-                            
+
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/'>Home</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/purchase'>Purchase</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
-                            {/* {user ?
+                            {user ?
                                 <li ><button className=' btn-sm mt-2 rounded-xl mr-1'>Sign Out</button></li>
                                 :
                                 <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
-                            } */}
+                            }
 
                             <label class="swap swap-rotate " onClick={toggleDark}>
                                 <input type="checkbox" onClick={() => setDark(!dark)} />
