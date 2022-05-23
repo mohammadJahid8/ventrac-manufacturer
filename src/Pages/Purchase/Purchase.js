@@ -1,23 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import fetcher from '../Shared/api/axios.config';
 
 const Purchase = () => {
     const [disabled, setDisabled] = useState(false);
-    const [quantity, setQuantity] = useState();
+    const [inputQuantity, setInputQuantity] = useState();
+    const [tool, setTool] = useState({});
+    const { _id, image, minOrder, description, price, name, quantity } = tool;
     const [user] = useAuthState(auth);
-
-
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { id } = useParams();
 
+
+
+    //load a signle tool
+    useEffect(() => {
+        (async () => {
+            const res = await fetcher.get(`/tools/${id}`)
+            setTool(res.data);
+        })()
+    }, [id])
+
+
+
+    //getting input value
     const orderQuantityChange = (event) => {
         const inputQuantity = event.target.value;
-        setQuantity(inputQuantity);
+        setInputQuantity(inputQuantity);
     }
 
     const onSubmit = (data) => {
-        const newData = { ...data, quantity: quantity, name: user.displayName, email: user.email };
+        const newData = { ...data, quantity: inputQuantity, name: user.displayName, email: user.email };
         reset();
     }
 
@@ -65,9 +81,8 @@ const Purchase = () => {
                                         className="border border-gray-300 p-4 rounded w-full text-base leading-4 placeholder-gray-600 text-gray-600"
                                         type="text"
                                         disabled
-
                                         value={user?.displayName}
-                                        {...register("name")}
+
                                     />
                                 </div>
                                 <div className="mt-4">
@@ -77,7 +92,7 @@ const Purchase = () => {
                                         // placeholder="Email"
                                         disabled
                                         value={user?.email}
-                                        {...register("email")}
+
                                     />
                                 </div>
 
@@ -106,13 +121,13 @@ const Purchase = () => {
                                     <p className='font-semibold mb-3 mt-3'>Per Unit Price: $50</p>
 
                                     {
-                                        (quantity > 100 || quantity < 500)
+                                        (inputQuantity > 100 || inputQuantity < 500)
                                         &&
-                                        <p className='font-semibold mb-3'>My Order Quantity: {quantity}</p>
+                                        <p className='font-semibold mb-3'>My Order Quantity: {inputQuantity}</p>
                                     }
                                     {
-                                        (quantity > 100 || quantity < 500) &&
-                                        < p className='font-semibold mb-3 mt-3'>Total Price: ${quantity * 50}</p>}
+                                        (inputQuantity > 100 || inputQuantity < 500) &&
+                                        < p className='font-semibold mb-3 mt-3'>Total Price: ${inputQuantity * 50}</p>}
 
                                     <div>
                                         <input
@@ -124,23 +139,21 @@ const Purchase = () => {
 
                                         />
 
-                                        {quantity < 100
+                                        {inputQuantity < 100
                                             &&
                                             <p className="text-red-500 text-sm">Minimum order 100pcs</p>
                                         }
                                         {
-                                            quantity > 500
+                                            inputQuantity > 500
                                             &&
                                             <p className="text-red-500 text-sm">Maximum order 500pcs</p>
                                         }
                                     </div>
                                 </div>
 
-
-
                                 <button
                                     type="submit"
-                                    disabled={(quantity < 100 || quantity > 500) && !disabled}
+                                    disabled={(inputQuantity < 100 || inputQuantity > 500) && !disabled}
                                     className="mt-8 border border-transparent text-white btn btn-primary flex justify-center items-center py-4 rounded w-full">
                                     <div>
                                         <p className="text-base leading-4">Place Order</p>

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import fetcher from '../../Shared/api/axios.config';
 import Loading from '../../Shared/Loading/Loading';
 
 const Tools = () => {
     const [tools, setTools] = useState([]);
-    console.log(tools);
+    
+    const navigate = useNavigate();
 
+
+    //data loaded from database by axios custom api
     useEffect(() => {
         (async () => {
             const res = await fetcher.get('/tools')
@@ -70,7 +74,9 @@ const Tools = () => {
                                                     <h2 className="text-indigo-700 text-xs font-semibold">Bay Area, San Francisco</h2>
                                                     <h3 className="text-indigo-700 text-xl font-semibold">${tool.price}/per</h3>
                                                 </div>
-                                                <button class="btn btn-wide btn-primary">Place Order</button>
+                                                <button
+                                                    onClick={() => navigate(`/purchase/${tool._id}`)}
+                                                    class="btn btn-wide btn-primary">Place Order</button>
                                             </div>
                                         </div>
                                     </div>)}
