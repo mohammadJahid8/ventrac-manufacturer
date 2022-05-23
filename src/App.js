@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './Pages/HomePage/Home/Home';
 import Blogs from './Pages/Blogs/Blogs';
 import Purchase from './Pages/Purchase/Purchase';
+import PrivateRoute from './Pages/Auths/PrivateRoute';
 
 function App() {
   return (
@@ -19,11 +20,14 @@ function App() {
       <Navbar>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/purchase/:id" element={<Purchase />} />
-          <Route path="/blogs" element={<Blogs />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/purchase/:id" element={<Purchase />} />
+          </Route>
+
         </Routes>
         <Footer />
       </Navbar>
