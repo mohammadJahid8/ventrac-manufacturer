@@ -48,7 +48,7 @@ const Navbar = ({ children }) => {
                         <ul class="menu menu-horizontal">
                             
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/'>Home</NavLink></li>
-                            <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signup'>Sign Up</NavLink></li>
+                            <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/purchase'>Purchase</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
                             {/* {user ?
                                 <li ><button className=' btn-sm mt-2 rounded-xl mr-1'>Sign Out</button></li>

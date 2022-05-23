@@ -15,7 +15,7 @@ const Explore = () => {
                         <h1 className="xl:text-4xl text-3xl font-semibold leading-9 text-gray-800">Act before it’s too late!</h1>
                     </div>
                     <div className="mt-4">
-                        <p className="xl:text-xl text-base leading-7 text-center text-gray-600">Furniture that looks modern and is comfortable as well. Avail the 50% offer now.</p>
+                        <p className="xl:text-xl text-base leading-7 text-center text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, explicabo?</p>
                     </div>
                     <div className="mt-8 flex justify-center items-center w-full">
                         <button className="hover:opacity-75 flex justify-center bg-gray-800 sm:w-32 w-full h-10 py-3">
