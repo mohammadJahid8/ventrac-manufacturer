@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import fetcher from '../Shared/api/axios.config';
-import { useHistory } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Purchase = () => {
     const [disabled, setDisabled] = useState(false);
@@ -30,11 +30,17 @@ const Purchase = () => {
         setInputQuantity(inputQuantity);
     }
 
-    
+    //place an order and send data to the database
     const onSubmit = (data) => {
         const newData = { ...data, quantity: inputQuantity, name: user.displayName, email: user.email };
+        const res = fetcher.post('/orders', newData);
         reset();
+        toast.success("Your Order is Placed Successfully!", {
+            position: toast.POSITION.TOP_CENTER
+        })
+
     }
+
 
     return (
         <div className="flex justify-center items-center">
