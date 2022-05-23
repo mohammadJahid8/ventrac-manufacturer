@@ -21,10 +21,11 @@ const SignIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    
+
 
     useEffect(() => {
         if (error) {
-
             toast.error((error.code), {
                 position: toast.POSITION.TOP_CENTER
             })

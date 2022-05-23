@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
@@ -6,7 +7,12 @@ import auth from '../../../firebase.init';
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
     const [user] = useAuthState(auth);
-    
+
+
+    const logout = () => {
+        signOut(auth);
+    };
+
 
 
     //implemented dark mode  
@@ -36,7 +42,7 @@ const Navbar = ({ children }) => {
             <div class="drawer-content flex flex-col ">
                 <div class="w-full navbar  lg:px-6">
                     <div class="flex-1 px-2 mx-2">
-                        <img src="https://toolsinaction.com/wp-content/uploads/2008/08/Ventrac-Logo.png" alt="" className='w-28'/>
+                        <img src="https://toolsinaction.com/wp-content/uploads/2008/08/Ventrac-Logo.png" alt="" className='w-28' />
                     </div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -52,9 +58,9 @@ const Navbar = ({ children }) => {
 
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/'>Home</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/purchase'>Purchase</NavLink></li>
-                            <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
+                            {/* <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li> */}
                             {user ?
-                                <li ><button className=' btn-sm mt-2 rounded-xl mr-1'>Sign Out</button></li>
+                                <li ><button className=' btn-sm mt-2 rounded-xl mr-1' onClick={logout}>Sign Out</button></li>
                                 :
                                 <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li>
                             }

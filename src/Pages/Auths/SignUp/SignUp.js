@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -10,13 +10,13 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 
     useEffect(() => {
@@ -33,13 +33,13 @@ const SignUp = () => {
         </div>
     }
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async (data) => {
         const { email, password } = data;
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: data.name });
         reset();
-
     }
+
 
     return (
         <div className='mt-8'>
