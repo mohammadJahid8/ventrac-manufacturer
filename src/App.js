@@ -13,6 +13,10 @@ import Home from './Pages/HomePage/Home/Home';
 import Blogs from './Pages/Blogs/Blogs';
 import Purchase from './Pages/Purchase/Purchase';
 import PrivateRoute from './Pages/Auths/PrivateRoute';
+import DashBoard from './Pages/DashBoard/DashBoard';
+import MyProfile from './Pages/DashBoard/InsideDashboard/MyProfile/MyProfile';
+import AddReview from './Pages/DashBoard/InsideDashboard/AddReview/AddReview';
+import MyOrders from './Pages/DashBoard/InsideDashboard/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -26,6 +30,12 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route element={<PrivateRoute />}>
             <Route path="/purchase/:id" element={<Purchase />} />
+          </Route>
+
+          <Route path='/dashboard' element={<DashBoard />}>
+            <Route path='myprofile' element={<MyProfile />} />
+            <Route path='addreview' element={<AddReview />} />
+            <Route path='myorders' element={<MyOrders />} />
           </Route>
 
         </Routes>

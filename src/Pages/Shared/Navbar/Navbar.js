@@ -1,12 +1,13 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const Navbar = ({ children }) => {
     const [dark, setDark] = useState(false);
     const [user] = useAuthState(auth);
+    const {pathname}= useLocation();
 
 
     const logout = () => {
@@ -41,6 +42,13 @@ const Navbar = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col ">
                 <div class="w-full navbar  lg:px-6">
+                    
+                    {
+                        pathname.includes('dashboard') &&(
+                        <label for="my-drawer-2" tabindex="0" class="btn btn-ghost btn-circle lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg"  class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                    </label>)}
+                    
                     <div class="flex-1 px-2 mx-2">
                         <img src="https://toolsinaction.com/wp-content/uploads/2008/08/Ventrac-Logo.png" alt="" className='w-28' />
                     </div>
@@ -58,7 +66,7 @@ const Navbar = ({ children }) => {
 
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/'>Home</NavLink></li>
                             <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/purchase'>Purchase</NavLink></li>
-                            {/* <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/signin'>Sign In</NavLink></li> */}
+                            <li ><NavLink className=' btn-sm mt-2 rounded-xl mr-1' to='/dashboard/myprofile'>Dashboard</NavLink></li>
                             {user ?
                                 <li ><button className=' btn-sm mt-2 rounded-xl mr-1' onClick={logout}>Sign Out</button></li>
                                 :
