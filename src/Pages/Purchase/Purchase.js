@@ -10,6 +10,10 @@ const Purchase = () => {
     const [disabled, setDisabled] = useState(false);
     const [inputQuantity, setInputQuantity] = useState();
     const [tool, setTool] = useState({});
+    
+    
+    
+    
     const { _id, image, minOrder, description, price, name, quantity } = tool;
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -30,14 +34,20 @@ const Purchase = () => {
         setInputQuantity(inputQuantity);
     }
 
+    const totalPrice = inputQuantity * price;
+
     //place an order and send data to the database
     const onSubmit = (data) => {
-        const newData = { ...data, quantity: inputQuantity, name: user.displayName, email: user.email };
+        const newData = { ...data, quantity: inputQuantity, name: user.displayName, email: user.email, price: totalPrice};
         const res = fetcher.post('/orders', newData);
         reset();
         toast.success("Your Order is Placed Successfully!", {
             position: toast.POSITION.TOP_CENTER
         })
+        const newQuantity = quantity - inputQuantity;
+        const newTool = { ...tool, quantity: newQuantity };
+        setTool(newTool);
+        const res2 = fetcher.put(`/tools/${id}`, newTool);
 
     }
 
@@ -137,7 +147,7 @@ const Purchase = () => {
                                     }
                                     {
                                         (inputQuantity < minOrder || inputQuantity < quantity) &&
-                                        < p className='font-semibold mb-3 mt-3'>Total Price: ${inputQuantity * price}</p>}
+                                        < p className='font-semibold mb-3 mt-3'>Total Price: ${totalPrice}</p>}
 
                                     <div>
                                         <input
