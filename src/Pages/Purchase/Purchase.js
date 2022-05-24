@@ -44,8 +44,10 @@ const Purchase = () => {
       ...data,
       quantity: inputQuantity,
       name: user.displayName,
+      productName: name,
       email: user.email,
       price: totalPrice,
+      image: image,
     };
     const res = fetcher.post("/orders", newData);
     reset();
