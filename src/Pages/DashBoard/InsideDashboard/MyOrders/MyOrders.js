@@ -7,6 +7,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
 
+  //fetched my orders
   useEffect(() => {
     if (user) {
       (async () => {
@@ -16,9 +17,23 @@ const MyOrders = () => {
     }
   }, [user]);
 
+  //delete or cancel a order
+  const handleDeleteItem = (id) => {
+    const proceed = window.confirm(
+      "Are you sure you want to delete this item?"
+    );
+    if (proceed) {
+      const res = fetcher.delete(`/order/${id}`);
+      setOrders(res.data);
+
+      const remainingOrders = orders.filter((order) => order._id !== id);
+      setOrders(remainingOrders);
+    }
+  };
+
   return (
     <div className="mt-5">
-      <h1>My Orders: {orders.length}</h1>
+      <h1>My Orders: {orders?.length}</h1>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead>
@@ -32,7 +47,7 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {orders?.map((order) => (
               <tr>
                 <th></th>
                 <td>
@@ -59,6 +74,14 @@ const MyOrders = () => {
                 <td>${order.price}</td>
                 <th>
                   <button className="btn btn-ghost btn-xs">details</button>
+                </th>
+                <th>
+                  <button
+                    onClick={() => handleDeleteItem(order._id)}
+                    className="btn btn-ghost btn-xs"
+                  >
+                    Delete
+                  </button>
                 </th>
               </tr>
             ))}
