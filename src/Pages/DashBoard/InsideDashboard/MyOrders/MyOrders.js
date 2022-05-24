@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import auth from "../../../../firebase.init";
 import fetcher from "../../../Shared/api/axios.config";
+import Loading from "../../../Shared/Loading/Loading";
+import DeleteOrderModal from "./DeleteOrderModal";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
+  const [deleteOrder, setDeleteOrder] = useState(null);
 
   //fetched my orders
+  // const { data: orders, isLoading } = useQuery("orders", () =>
+  //   fetcher.get(`/orders?email=${user?.email}`)
+  // );
+
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
+
   useEffect(() => {
     if (user) {
       (async () => {
@@ -17,19 +29,7 @@ const MyOrders = () => {
     }
   }, [user]);
 
-  //delete or cancel a order
-  const handleDeleteItem = (id) => {
-    const proceed = window.confirm(
-      "Are you sure you want to delete this item?"
-    );
-    if (proceed) {
-      const res = fetcher.delete(`/order/${id}`);
-      setOrders(res.data);
-
-      const remainingOrders = orders.filter((order) => order._id !== id);
-      setOrders(remainingOrders);
-    }
-  };
+  // delete or cancel a order
 
   return (
     <div className="mt-5">
@@ -43,6 +43,7 @@ const MyOrders = () => {
               <th>Product Name</th>
               <th>Ordered Quantity</th>
               <th>Price</th>
+              <th></th>
               <th />
             </tr>
           </thead>
@@ -76,18 +77,27 @@ const MyOrders = () => {
                   <button className="btn btn-ghost btn-xs">details</button>
                 </th>
                 <th>
-                  <button
-                    onClick={() => handleDeleteItem(order._id)}
-                    className="btn btn-ghost btn-xs"
+                  <label
+                    onClick={() => setDeleteOrder(order)}
+                    for="delete-confirm-modal"
+                    class="btn btn-error btn-xs "
                   >
-                    Delete
-                  </button>
+                    Cancel
+                  </label>
                 </th>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {deleteOrder && (
+        <DeleteOrderModal
+          deleteOrder={deleteOrder}
+          setOrders={setOrders}
+          orders={orders}
+          setDeleteOrder={setDeleteOrder}
+        />
+      )}
     </div>
   );
 };
