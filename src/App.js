@@ -18,6 +18,7 @@ import MyProfile from "./Pages/DashBoard/InsideDashboard/MyProfile/MyProfile";
 import AddReview from "./Pages/DashBoard/InsideDashboard/AddReview/AddReview";
 import MyOrders from "./Pages/DashBoard/InsideDashboard/MyOrders/MyOrders";
 import MakeAdmin from "./Pages/DashBoard/InsideDashboard/MakeAdmin/MakeAdmin";
+import RequireAdmin from "./Pages/Auths/RequireAdmin";
 
 function App() {
   return (
@@ -35,7 +36,14 @@ function App() {
               <Route path="myprofile" element={<MyProfile />} />
               <Route path="addreview" element={<AddReview />} />
               <Route path="myorders" element={<MyOrders />} />
-              <Route path="makeadmin" element={<MakeAdmin />} />
+              <Route
+                path="makeadmin"
+                element={
+                  <RequireAdmin>
+                    <MakeAdmin />
+                  </RequireAdmin>
+                }
+              />
             </Route>
           </Route>
         </Routes>

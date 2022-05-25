@@ -25,7 +25,7 @@ const MakeAdmin = () => {
               <tr>
                 <th>User Name</th>
                 <th>Email</th>
-                <th>Ordered Quantity</th>
+                <th></th>
                 <th></th>
               </tr>
             </thead>
