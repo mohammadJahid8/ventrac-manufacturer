@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
 const MyProfile = () => {
   const [user] = useAuthState(auth);
   const { displayName, email, photoURL } = user;
-  //   console.log(displayName, email, photoURL);
+
 
   const {
     register,
