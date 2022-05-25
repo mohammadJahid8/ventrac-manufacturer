@@ -30,12 +30,11 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route element={<PrivateRoute />}>
             <Route path="/purchase/:id" element={<Purchase />} />
-          </Route>
-
-          <Route path="/dashboard" element={<DashBoard />}>
-            <Route path="myprofile" element={<MyProfile />} />
-            <Route path="addreview" element={<AddReview />} />
-            <Route path="myorders" element={<MyOrders />} />
+            <Route path="/dashboard" element={<DashBoard />}>
+              <Route path="myprofile" element={<MyProfile />} />
+              <Route path="addreview" element={<AddReview />} />
+              <Route path="myorders" element={<MyOrders />} />
+            </Route>
           </Route>
         </Routes>
         <Footer />

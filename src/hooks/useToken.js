@@ -9,7 +9,12 @@ const useToken = (user) => {
     const currentUser = { email: email };
     if (email) {
       const res = fetcher.put(`/user/${email}`, currentUser);
-      console.log(res);
+      res.then((response) => {
+        console.log(response);
+        const accessToken = response.data.token;
+        localStorage.setItem("accessToken", accessToken);
+        setToken(accessToken);
+      });
     }
   }, [user]);
   return [token];

@@ -1,6 +1,9 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../../../firebase.init";
 import fetcher from "../../../Shared/api/axios.config";
 import Loading from "../../../Shared/Loading/Loading";
@@ -10,6 +13,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const [user] = useAuthState(auth);
   const [deleteOrder, setDeleteOrder] = useState(null);
+  const navigate = useNavigate();
 
   //fetched my orders
   // const { data: orders, isLoading } = useQuery("orders", () =>
@@ -22,14 +26,21 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (user) {
-      (async () => {
-        const res = await fetcher.get(`/orders?email=${user.email}`);
-        setOrders(res.data);
-      })();
+      const res = fetcher.get(`/orders?email=${user.email}`);
+      res
+        .then((response) => {
+          setOrders(response.data);
+        })
+        .catch(function (error) {
+          if (error.response.status === 401 || error.response.status === 403) {
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            toast.error("Access Token Crashed");
+            navigate("/");
+          }
+        });
     }
-  }, [user]);
-
-  // delete or cancel a order
+  }, [user, navigate]);
 
   return (
     <div className="mt-5">
