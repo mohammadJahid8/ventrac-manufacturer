@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../firebase.init";
 import fetcher from "../Pages/Shared/api/axios.config";
 
-const useToken = (user, userName) => {
+const useToken = (user) => {
   const [token, setToken] = useState("");
 
   useEffect(() => {
     const email = user?.user?.email;
-    const currentUser = { email: email, userName: userName };
+    const currentUser = { email: email };
     if (email) {
       const res = fetcher.put(`/user/${email}`, currentUser);
       res.then((response) => {
@@ -17,7 +15,7 @@ const useToken = (user, userName) => {
         setToken(accessToken);
       });
     }
-  }, [user, setToken, userName]);
+  }, [user, setToken]);
   return [token];
 };
 

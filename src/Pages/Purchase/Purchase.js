@@ -57,6 +57,7 @@ const Purchase = () => {
     const newQuantity = quantity - inputQuantity;
     const newTool = { ...tool, quantity: newQuantity };
     setTool(newTool);
+    
     const res2 = fetcher.put(`/tools/${id}`, newTool);
   };
 

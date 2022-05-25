@@ -21,8 +21,7 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  const [userName, setUserName] = useState("");
-  const [token] = useToken(user, userName);
+  const [token] = useToken(user);
 
   //navigating the user from the previous page after login
   let navigate = useNavigate();
@@ -52,10 +51,10 @@ const SignUp = () => {
   }
 
   const onSubmit = async (data) => {
-    const { email, password } = data;
+    const { email, password, name } = data;
+    console.log(name);
     await createUserWithEmailAndPassword(email, password);
-    await updateProfile({ displayName: data.name });
-    setUserName(data.name);
+    await updateProfile({ displayName: name });
     reset();
   };
 
