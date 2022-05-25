@@ -1,3 +1,5 @@
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useQuery } from "react-query";
 import fetcher from "../../Shared/api/axios.config";
@@ -58,36 +60,20 @@ const Reviews = () => {
       <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {reviews?.data?.map((review) => (
           <>
-            <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
+            <div className="flex flex-col justify-between p-5 border rounded shadow-sm ">
               <div>
-                <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50">
-                  <svg
-                    className="w-12 h-12 text-deep-purple-accent-400"
-                    stroke="currentColor"
-                    viewBox="0 0 52 52"
-                  >
-                    <polygon
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                      points="29 13 14 29 25 29 23 39 38 23 27 23"
-                    />
-                  </svg>
+                <div className="">
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
                 </div>
-                <h6 className="mb-2 font-semibold leading-5">The deep ocean</h6>
-                <p className="mb-3 text-sm text-gray-900">
-                  A flower in my garden, a mystery in my panties. Heart attack
-                  never stopped old Big Bear.
-                </p>
+                <p className=" text-sm text-gray-900">"{review.comment}"</p>
               </div>
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                Learn more
-              </a>
+              <p className="mt-0 pr-2  flex justify-end font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 text-blue-800">
+                __{review.name}
+              </p>
             </div>
           </>
         ))}
