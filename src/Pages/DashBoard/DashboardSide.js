@@ -11,7 +11,7 @@ const DashboardSide = ({ children }) => {
   return (
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content px-4 bg-gray-100">
+      <div class="drawer-content px-4 bg-gray-50">
         {/* <!-- Page content here --> */}
         {children}
       </div>
@@ -22,20 +22,24 @@ const DashboardSide = ({ children }) => {
           <li>
             <NavLink to="/dashboard/myprofile">My Profile</NavLink>
           </li>
-          <li>
-            <NavLink to="/dashboard/addreview">Add a Review</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/myorders">My Orders</NavLink>
-          </li>
-          {admin && (
+          {!admin && (
             <li>
-              <NavLink to="/dashboard/makeadmin">Manage All Orders</NavLink>
+              <NavLink to="/dashboard/addreview">Add a Review</NavLink>
+            </li>
+          )}
+          {!admin && (
+            <li>
+              <NavLink to="/dashboard/myorders">My Orders</NavLink>
             </li>
           )}
           {admin && (
             <li>
-              <NavLink to="/dashboard/makeadmin">Add a product</NavLink>
+              <NavLink to="/dashboard/manageorders">Manage All Orders</NavLink>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <NavLink to="/dashboard/addproduct">Add a product</NavLink>
             </li>
           )}
           {admin && (
@@ -45,7 +49,7 @@ const DashboardSide = ({ children }) => {
           )}
           {admin && (
             <li>
-              <NavLink to="/dashboard/makeadmin">Manage products</NavLink>
+              <NavLink to="/dashboard/manageproduct">Manage products</NavLink>
             </li>
           )}
         </ul>

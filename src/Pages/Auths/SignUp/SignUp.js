@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -21,8 +21,8 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-
-  const [token] = useToken(user);
+  const [userName, setUserName] = useState("");
+  const [token] = useToken(user, userName);
 
   //navigating the user from the previous page after login
   let navigate = useNavigate();
@@ -55,6 +55,7 @@ const SignUp = () => {
     const { email, password } = data;
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: data.name });
+    setUserName(data.name);
     reset();
   };
 
