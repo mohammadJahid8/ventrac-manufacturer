@@ -19,7 +19,6 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const { displayName, email, photoURL } = user;
 
-
   const {
     register,
     formState: { errors },

@@ -25,6 +25,7 @@ import AddProduct from "./Pages/DashBoard/InsideDashboard/AddProduct/AddProduct"
 import ManageOrders from "./Pages/DashBoard/InsideDashboard/ManageOrders/ManageOrders";
 import ManageProducts from "./Pages/DashBoard/InsideDashboard/ManageProducts/ManageProducts";
 import Payment from "./Pages/DashBoard/InsideDashboard/Payment/Payment";
+import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/portfolio" element={<MyPortfolio />} />
           <Route path="*" element={<NotFound />} />
           <Route element={<PrivateRoute />}>
             <Route path="/purchase/:id" element={<Purchase />} />
