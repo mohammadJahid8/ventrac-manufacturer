@@ -2,7 +2,7 @@ import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../../../firebase.init";
 import fetcher from "../../../Shared/api/axios.config";
@@ -54,8 +54,8 @@ const MyOrders = () => {
               <th>Product Name</th>
               <th>Ordered Quantity</th>
               <th>Price</th>
+              <th>Payment</th>
               <th></th>
-              <th />
             </tr>
           </thead>
           <tbody>
@@ -84,18 +84,28 @@ const MyOrders = () => {
                 </td>
                 <td>{order.quantity}</td>
                 <td>${order.price}</td>
-                <th>
-                  <button className="btn btn-ghost btn-xs">details</button>
-                </th>
-                <th>
-                  <label
-                    onClick={() => setDeleteOrder(order)}
-                    for="delete-confirm-modal"
-                    class="btn btn-error btn-xs "
-                  >
-                    Cancel
-                  </label>
-                </th>
+                <td>
+                  {order.price && !order.paid && (
+                    <Link to={`/dashboard/payment/${order._id}`}>
+                      <button className="btn btn-success btn-xs">Pay</button>
+                    </Link>
+                  )}
+                  {order.price && order.paid && (
+                    <span className="text-success btn-xs">Paid</span>
+                  )}
+                </td>
+
+                <td>
+                  {!order.paid && (
+                    <label
+                      onClick={() => setDeleteOrder(order)}
+                      for="delete-confirm-modal"
+                      class="btn btn-error btn-xs "
+                    >
+                      Cancel
+                    </label>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

@@ -24,6 +24,7 @@ import RequireAdmin from "./Pages/Auths/RequireAdmin";
 import AddProduct from "./Pages/DashBoard/InsideDashboard/AddProduct/AddProduct";
 import ManageOrders from "./Pages/DashBoard/InsideDashboard/ManageOrders/ManageOrders";
 import ManageProducts from "./Pages/DashBoard/InsideDashboard/ManageProducts/ManageProducts";
+import Payment from "./Pages/DashBoard/InsideDashboard/Payment/Payment";
 
 function App() {
   return (
@@ -41,9 +42,7 @@ function App() {
               <Route path="myprofile" element={<MyProfile />} />
               <Route path="addreview" element={<AddReview />} />
               <Route path="myorders" element={<MyOrders />} />
-              {/* <Route path="myorders" element={<ManageOrders />} />
-              <Route path="myorders" element={<AddProduct />} />
-              <Route path="myorders" element={<ManageProducts />} /> */}
+              <Route path="payment/:id" element={<Payment />} />
 
               <Route
                 path="makeadmin"

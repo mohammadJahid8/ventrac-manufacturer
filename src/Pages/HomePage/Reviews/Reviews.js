@@ -11,6 +11,7 @@ const Reviews = () => {
     fetcher.get("/reviews")
   );
 
+  console.log(reviews?.data?.reverse());
   if (isLoading) {
     return <Loading />;
   }
@@ -94,7 +95,9 @@ const Reviews = () => {
                     }
                   />
                 </div>
-                <p className=" text-sm text-gray-900 my-2">Rating:{review.rating}</p>
+                <p className=" text-sm text-gray-900 my-2">
+                  Rating:{review.rating}
+                </p>
                 <p className=" text-sm text-gray-900">"{review.comment}"</p>
               </div>
               <p className="mt-0 pr-2  flex justify-end font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 text-blue-800">
