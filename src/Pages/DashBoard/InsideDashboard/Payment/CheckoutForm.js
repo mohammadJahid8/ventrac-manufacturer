@@ -112,7 +112,7 @@ const CheckoutForm = ({ order }) => {
           <button
             type="submit"
             class="btn btn-primary btn-sm my-5 w-28 align"
-            disabled={!stripe || !clientSecret}
+            disabled={!stripe || !clientSecret || success}
           >
             Pay
           </button>

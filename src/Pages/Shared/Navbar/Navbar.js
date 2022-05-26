@@ -92,14 +92,7 @@ const Navbar = ({ children }) => {
                   Home
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  className=" btn-sm mt-2 rounded-xl mr-1"
-                  to="/purchase"
-                >
-                  Purchase
-                </NavLink>
-              </li>
+
               {user && (
                 <li>
                   <NavLink
@@ -110,6 +103,11 @@ const Navbar = ({ children }) => {
                   </NavLink>
                 </li>
               )}
+              <li>
+                <NavLink className=" btn-sm mt-2 rounded-xl mr-1" to="/blogs">
+                  Blogs
+                </NavLink>
+              </li>
               {user ? (
                 <li>
                   <button

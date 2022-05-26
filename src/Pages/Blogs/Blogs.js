@@ -25,97 +25,15 @@ const Blogs = () => {
                       How will you improve the performance of a React
                       Application?
                     </h1>
-                    {/* <div className="my-5">
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full space-x-3">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12.5"
-                          height={16}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                        <h4 className="text-md text-gray-900 ">
-                          First time, what do I do next?
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full space-x-3">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900 ">
-                          Changing you profile picture and other information
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          I didnt get a confirmation email, what should I do
-                          next
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          What is the refund policy if I have to cancel during
-                          the month
-                        </h4>
-                      </div>
-                    </div> */}
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam qui cupiditate quia cum dicta optio expedita repellendus illo ad eos omnis, ipsum non asperiores? Eum, voluptatem dolorem? Iste debitis ullam ipsam blanditiis commodi quam totam, officia itaque ex distinctio sit.</p>
+
+                    <p>
+                      We can improve the performance of a React Application in
+                      different ways. Some of are Keeping component state local
+                      where necessary, Memoizing React components to prevent
+                      unnecessary re-renders, Code-splitting in React using
+                      dynamic import(), Windowing or list virtualization in
+                      React applications, Lazy loading images in React
+                    </p>
                   </div>
                 </div>
                 <div role="cell" className="bg-gray-100">
@@ -124,493 +42,67 @@ const Blogs = () => {
                       What are the different ways to manage a state in a React
                       application?
                     </h1>
-                    <div className="my-5">
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          First time, what do I do next?
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          Changing you profile picture and other information
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          I didnt get a confirmation email, what should I do
-                          next
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          What is the refund policy if I have to cancel during
-                          the month
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          What is the refund policy?
-                        </h4>
-                      </div>
-                    </div>
+                    <p>
+                      Some ways to manage a state in a React application: <br />
+                      1. Local (UI) state: Local state is data we manage in one
+                      or another component. Local state is most often managed in
+                      React using the useState hook. <br /> 2. Global (UI)
+                      state: Global state is data we manage across multiple
+                      components.
+                    </p>
                   </div>
                 </div>
-                <div role="cell" className="bg-gray-100">
-                  <div className="bg-white p-5 rounded-md relative h-full w-full">
-                    <h1 className="pb-4 text-2xl font-semibold">
-                      How does prototypical inheritance work?
-                    </h1>
-                    <div className="my-5">
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          First time, what do I do next?
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          Changing you profile picture and other information
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          I didnt get a confirmation email, what should I do
-                          next
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          What is the refund policy if I have to cancel during
-                          the month
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
                 <div role="cell" className="bg-gray-100">
                   <div className="bg-white p-5 rounded-md  h-full relative w-full">
                     <h1 className="pb-4 text-2xl font-semibold">
                       What is a unit test? Why should write unit tests?
                     </h1>
-                    <div className="my-5">
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          First time, what do I do next?
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          Changing you profile picture and other information
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          I didnt get a confirmation email, what should I do
-                          next
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          What is the refund policy if I have to cancel during
-                          the month
-                        </h4>
-                      </div>
-                    </div>
+                    <p>
+                      Unit testing allows software developers to actually think
+                      through the design of the software and what has to be done
+                      before they write the code. This can help them to stay
+                      focused and can also help them to create much better
+                      designs. Testing a code early on can help to define what
+                      that piece of code is really responsible for.
+                    </p>
                   </div>
                 </div>
                 <div role="cell" className="bg-gray-100">
                   <div className=" bg-white p-5 rounded-md relative h-full w-full">
                     <h1 className="pb-4 text-2xl font-semibold">
-                      Profile Preferences
+                      Why you do not set the state directly in React.?
                     </h1>
-                    <div className="my-5">
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          First time, what do I do next?
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          Changing you profile picture and other information
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          I didnt get a confirmation email, what should I do
-                          next
-                        </h4>
-                      </div>
-                    </div>
+                    <p>
+                      Directly modifying state is not recommended as react will
+                      not come to know of the change and it will not cause a
+                      rerender. All the diffing happens on Virtual DOM and react
+                      only updates the change attributes to Browser. when we
+                      update the state of a component all it's children are
+                      going to be rendered as well. or our entire component tree
+                      rendered. but when i say our entire component tree is
+                      rendered that doesn’t mean that the entire DOM is updated.
+                      when a component is rendered we basically get a react
+                      element, so that is updating our virtual dom. React will
+                      then look at the virtual DOM, it also has a copy of the
+                      old virtual DOM, that is why we shouldn’t set the state
+                      directly in React
+                    </p>
                   </div>
                 </div>
                 <div role="cell" className="bg-gray-100">
-                  <div className=" bg-white p-5 rounded-md relative h-full  w-full">
+                  <div className=" bg-white p-5 rounded-md relative h-full w-full">
                     <h1 className="pb-4 text-2xl font-semibold">
-                      Privacy and Cookies
+                      How does prototypical inheritance work?
                     </h1>
-                    <div className="my-5">
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          First time, what do I do next?
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          Changing you profile picture and other information
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          I didnt get a confirmation email, what should I do
-                          next
-                        </h4>
-                      </div>
-                      <div className="flex items-center pb-4 dark:border-gray-700 cursor-pointer w-full">
-                        <div>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="12.5"
-                            height={16}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </div>
-                        <h4 className="text-md text-gray-900  pl-4">
-                          What is the refund policy if I have to cancel during
-                          the month
-                        </h4>
-                      </div>
-                    </div>
+                    <p>
+                      The Prototypal Inheritance is a feature in javascript used
+                      to add methods and properties in objects. It is a method
+                      by which an object can inherit the properties and methods
+                      of another object. Traditionally, in order to get and set
+                      the [Prototype] of an object, we use Object.getPrototypeOf
+                      and Object.setPrototypeOf.
+                    </p>
                   </div>
                 </div>
               </div>
