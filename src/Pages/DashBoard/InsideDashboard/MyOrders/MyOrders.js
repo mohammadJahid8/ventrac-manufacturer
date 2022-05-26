@@ -59,8 +59,8 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {orders?.map((order) => (
-              <tr>
+            {orders?.map((order, index) => (
+              <tr key={index}>
                 <th></th>
                 <td>
                   <div>
@@ -91,12 +91,14 @@ const MyOrders = () => {
                     </Link>
                   )}
                   {order.price && order.paid && (
-                    <span className="text-success btn-xs">Paid</span>
+                    <span className="text-xs text-green-600  bg-lime-100 py-1 rounded px-2 w-10">
+                      Paid
+                    </span>
                   )}
                 </td>
 
                 <td>
-                  {!order.paid && (
+                  {!order.paid ? (
                     <label
                       onClick={() => setDeleteOrder(order)}
                       for="delete-confirm-modal"
@@ -104,6 +106,13 @@ const MyOrders = () => {
                     >
                       Cancel
                     </label>
+                  ) : (
+                    <p>
+                      Transaction Id:{" "}
+                      <span class="text-success text-xs">
+                        {order.transactionId}
+                      </span>
+                    </p>
                   )}
                 </td>
               </tr>

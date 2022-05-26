@@ -3,6 +3,13 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import fetcher from "../../../Shared/api/axios.config";
 import Loading from "../../../Shared/Loading/Loading";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./CheckoutForm";
+
+const stripePromise = loadStripe(
+  "pk_test_51L0pRfJbegYKTJYPu7wYHHQHTkdeBJeEj0PibmVp39Do9lGIK2Fdq7RC4vZa4yOzZSlHxa7dY6oYPPySQaBWmpPy00BLMhz0Yk"
+);
 
 const Payment = () => {
   const { id } = useParams();
@@ -16,10 +23,10 @@ const Payment = () => {
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center items-center mt-12">
       <div className="">
         <h2 className="text-2xl text-success">Please pay for : {id}</h2>
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card w-full bg-base-100 shadow-xl">
           <div class="card-body">
             <p className="text-success font-bold">Hello, {order?.data?.name}</p>
             <h2 class="card-title">
@@ -32,11 +39,10 @@ const Payment = () => {
               </span>
             </p>
           </div>
-          <div>
-            <img
-              src="https://api.lorem.space/image/shoes?w=400&h=225"
-              alt="Shoes"
-            />
+          <div className="px-10">
+            <Elements stripe={stripePromise}>
+              <CheckoutForm order={order?.data} />
+            </Elements>
           </div>
         </div>
       </div>
