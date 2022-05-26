@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import ResetPass from "./Pages/Auths/ResetPassword/ResetPass";
 import SignIn from "./Pages/Auths/SignIn/SignIn";
 import SignUp from "./Pages/Auths/SignUp/SignUp";

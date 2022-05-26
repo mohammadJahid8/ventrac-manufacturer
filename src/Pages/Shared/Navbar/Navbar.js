@@ -35,7 +35,7 @@ const Navbar = ({ children }) => {
   return (
     <div class="drawer drawer-end " data-theme={dark ? "dark" : "light"}>
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col ">
+      <div class="drawer-content flex flex-col sticky top-0 z-50 ">
         <div class="w-full navbar  lg:px-6">
           {pathname.includes("dashboard") && (
             <label
@@ -60,7 +60,7 @@ const Navbar = ({ children }) => {
             </label>
           )}
 
-          <div class="flex-1 px-2 mx-2">
+          <div class="flex-1 px-2 mx-2 ">
             <img
               src="https://toolsinaction.com/wp-content/uploads/2008/08/Ventrac-Logo.png"
               alt=""

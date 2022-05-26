@@ -63,12 +63,38 @@ const Reviews = () => {
             <div className="flex flex-col justify-between p-5 border rounded shadow-sm ">
               <div>
                 <div className="">
-                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
-                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
-                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
-                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
-                  <FontAwesomeIcon icon={faStar} className="text-yellow-300" />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    className={
+                      review.rating > 0 ? "text-yellow-300" : "text-gray-300"
+                    }
+                  />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    className={
+                      review.rating > 1 ? "text-yellow-300" : "text-gray-300"
+                    }
+                  />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    className={
+                      review.rating > 2 ? "text-yellow-300" : "text-gray-300"
+                    }
+                  />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    className={
+                      review.rating > 3 ? "text-yellow-300" : "text-gray-300"
+                    }
+                  />
+                  <FontAwesomeIcon
+                    icon={faStar}
+                    className={
+                      review.rating > 4 ? "text-yellow-300" : "text-gray-300"
+                    }
+                  />
                 </div>
+                <p className=" text-sm text-gray-900 my-2">Rating:{review.rating}</p>
                 <p className=" text-sm text-gray-900">"{review.comment}"</p>
               </div>
               <p className="mt-0 pr-2  flex justify-end font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 text-blue-800">
