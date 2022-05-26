@@ -48,6 +48,7 @@ const Purchase = () => {
       email: user.email,
       price: totalPrice,
       image: image,
+      status: "pending",
     };
     const res = fetcher.post("/orders", newData);
     reset();
@@ -57,7 +58,7 @@ const Purchase = () => {
     const newQuantity = quantity - inputQuantity;
     const newTool = { ...tool, quantity: newQuantity };
     setTool(newTool);
-    
+
     const res2 = fetcher.put(`/tools/${id}`, newTool);
   };
 

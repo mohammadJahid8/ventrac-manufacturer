@@ -30,25 +30,25 @@ const Banner = () => {
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
           <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-            The quick, brown fox
+            Ventrac, the largest Manufacturer
             <br className="hidden md:block" />
-            jumps over a{" "}
+            Manufacturer{" "}
             <span className="relative inline-block px-2">
               <div className="absolute inset-0 transform -skew-x-12 bg-slate-200" />
               <span className="relative text-teal-900 font-extrabold text-3xl">
-                lazy dog
+                of tools
               </span>
             </span>
           </h2>
           <p className="mb-6 text-base text-indigo-100 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae. explicabo. Sed ut perspiciatis unde omnis.
+            The experience gained on the market, the quality assured, the
+            reliability and competitiveness of the products led to a rapid
+            growth of the Company on the International market.
           </p>
           <button className="btn ">Get Started</button>
           <p className="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque.
+            Today Ventrac can be considered one of the leading manufacturers of
+            strapping tools on a global scale.
           </p>
           <a
             href="/"
