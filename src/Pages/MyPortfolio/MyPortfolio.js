@@ -110,6 +110,7 @@ const MyPortfolio = () => {
                     <p>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
                         href="https://assignment-11-85553.web.app/?fbclid=IwAR2k56gpKUyfDqb3grgHrqhxGjaCRCjtM4XbK0w2LDi3X-TD-6zbcER7kfY"
                       >
@@ -119,6 +120,7 @@ const MyPortfolio = () => {
                     <p>
                       <a
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
                         href="https://flourishing-creponne-d381f1.netlify.app/?fbclid=IwAR2IaULUKF-GEK2S49n8-C_YSX3VpkByjHd0ojZcTpgsdLI0WRn-ha7BtRA"
                       >

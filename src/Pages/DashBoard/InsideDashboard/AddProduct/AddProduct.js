@@ -6,7 +6,9 @@ import fetcher from "../../../Shared/api/axios.config";
 import "./AddProduct.css";
 
 const AddProduct = () => {
+  const [disabled, setDisabled] = useState(false);
   const [imageURL, setImageURL] = useState("");
+  console.log(imageURL);
 
   const {
     register,
@@ -19,11 +21,11 @@ const AddProduct = () => {
     const product = {
       ...data,
       name: data.name,
-      quantity: data.quantity,
-      price: data.price,
+      quantity: parseInt(data.quantity),
+      price: parseInt(data.price),
       image: imageURL,
       description: data.description,
-      minOrder: data.minOrder,
+      minOrder: parseInt(data.minOrder),
     };
 
     const res = fetcher.post("/tools", product);
@@ -34,20 +36,21 @@ const AddProduct = () => {
     });
   };
 
-  const handleImage = (e) => {
-    const image = e.target.files[0];
+  const handleImage = async (e) => {
+    const image = await e.target.files[0];
 
     const formData = new FormData();
 
     formData.append("image", image);
 
-    axios
+    await axios
       .post(
         "https://api.imgbb.com/1/upload?key=274ad9f8c3d7517025c45a66c376bbee",
         formData
       )
       .then((response) => {
-        setImageURL(response.data.data.display_url);
+        console.log(response.data);
+        setImageURL(response?.data?.data?.display_url);
       })
       .catch((error) => {
         console.log(error);
@@ -128,8 +131,21 @@ const AddProduct = () => {
               </div>
             </div>
 
-            <div className="form-control mt-6">
-              <button className="btn btn-primary   w-full">ADD PRODUCT</button>
+            <div className="form-control mt-2">
+              {imageURL === "" ? (
+                <div>
+                  <p className="text-center text-orange-200">
+                    Please Wait some moment after uploading image
+                  </p>
+                  <button disabled className="btn btn-primary   w-full">
+                    ADD PRODUCT
+                  </button>
+                </div>
+              ) : (
+                <button className="btn btn-primary   w-full">
+                  ADD PRODUCT
+                </button>
+              )}
             </div>
           </div>
         </div>

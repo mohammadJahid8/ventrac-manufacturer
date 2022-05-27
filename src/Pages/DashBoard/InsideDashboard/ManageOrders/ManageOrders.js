@@ -28,7 +28,6 @@ const ManageOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () => fetcher.get("/all-orders"));
-  
 
   const handleApprovend = (id) => {
     const newStatus = {
@@ -39,7 +38,7 @@ const ManageOrders = () => {
   };
   return (
     <div className="mt-5">
-      <h1>My Orders: {orders?.data?.length}</h1>
+      <h1>All Orders: {orders?.data?.length}</h1>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <thead>
@@ -101,7 +100,7 @@ const ManageOrders = () => {
                   )}
                 </td>
                 <td>
-                  {order.paid && (
+                  {order.paid && order.status === "Pending" && (
                     <div>
                       <button
                         onClick={() => handleApprovend(order._id)}

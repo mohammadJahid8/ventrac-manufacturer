@@ -25,7 +25,7 @@ const ManageProducts = () => {
   return (
     <div className="mt-5">
       <h1>Total Products: {tools?.data?.length}</h1>
-      <div className="overflow-x-auto w-full">
+      <div className=" w-full">
         <table className="table w-full">
           <thead>
             <tr>

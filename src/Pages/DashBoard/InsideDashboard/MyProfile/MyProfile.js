@@ -110,7 +110,15 @@ const MyProfile = () => {
                 <div className="flex items-center mt-4 text-gray-700 ">
                   <FontAwesomeIcon icon={faLinkedin} />
                   <h1 className="px-2 text-sm">
-                    LinkedIn Account: {userData?.linkedin}
+                    LinkedIn Account:{" "}
+                    <a
+                      href={userData?.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:underline"
+                    >
+                      https://www.linkedin.com/in/..
+                    </a>
                   </h1>
                 </div>
               </div>

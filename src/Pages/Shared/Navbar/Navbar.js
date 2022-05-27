@@ -184,6 +184,11 @@ const Navbar = ({ children }) => {
               Blogs
             </NavLink>
           </li>
+          <li>
+            <NavLink className=" btn-sm mt-2 rounded-xl mr-1" to="/portfolio">
+              My Portfolio
+            </NavLink>
+          </li>
           {user ? (
             <li>
               <button className=" btn-sm mt-2 rounded-xl mr-1" onClick={logout}>
