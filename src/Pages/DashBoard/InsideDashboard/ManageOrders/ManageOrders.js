@@ -28,7 +28,7 @@ const ManageOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () => fetcher.get("/all-orders"));
-  console.log(orders);
+  
 
   const handleApprovend = (id) => {
     const newStatus = {

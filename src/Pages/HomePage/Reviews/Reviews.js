@@ -11,7 +11,6 @@ const Reviews = () => {
     fetcher.get("/reviews")
   );
 
-  console.log(reviews?.data?.reverse());
   if (isLoading) {
     return <Loading />;
   }
@@ -59,8 +58,8 @@ const Reviews = () => {
       </div>
 
       <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {reviews?.data?.map((review) => (
-          <>
+        {reviews?.data?.map((review, index) => (
+          <div key={index}>
             <div className="flex flex-col justify-between p-5 border rounded shadow-sm ">
               <div>
                 <div className="">
@@ -104,7 +103,7 @@ const Reviews = () => {
                 __{review.name}
               </p>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </div>

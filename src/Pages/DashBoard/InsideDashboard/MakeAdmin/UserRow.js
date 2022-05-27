@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import fetcher from "../../../Shared/api/axios.config";
 
 const UserRow = ({ userData, refetch }) => {
-  const { email, role } = userData;
+  const { email, role, name } = userData;
 
   //make a admin
   const makeAdmin = () => {
@@ -25,7 +25,7 @@ const UserRow = ({ userData, refetch }) => {
 
   return (
     <tr>
-      <td>Name</td>
+      <td>{name}</td>
       <td>{email}</td>
       <td>
         {role !== "admin" ? (

@@ -33,8 +33,6 @@ const SignIn = () => {
     }
   }, [token, from, navigate]);
 
-  
-
   useEffect(() => {
     if (error) {
       toast.error(error.code, {
@@ -127,7 +125,7 @@ const SignIn = () => {
 
               <div className="mb-6">
                 <label
-                  for="my-modal-6"
+                  htmlFor="my-modal-6"
                   className="hover:underline text-blue-600 inline-block"
                 >
                   Forgot your password?
@@ -143,7 +141,7 @@ const SignIn = () => {
                 className="btn btn-primary"
               />
             </div>
-            <div class="divider py-6">OR</div>
+            <div className="divider py-6">OR</div>
             <div className="field">
               <SocialLogin />
             </div>

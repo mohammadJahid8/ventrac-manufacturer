@@ -66,8 +66,8 @@ const MyPortfolio = () => {
 
           <div>
             <div className="overflow-hidden bg-white">
-              <div class="avatar flex justify-center pt-6 pb-2">
-                <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <div className="avatar flex justify-center pt-6 pb-2">
+                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img
                     src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
                     alt=""
@@ -75,8 +75,8 @@ const MyPortfolio = () => {
                 </div>
               </div>
 
-              <div class="card w-96 bg-base-100">
-                <div class="card-body">
+              <div className="card w-96 bg-base-100">
+                <div className="card-body">
                   <h1 className="text-xl font-semibold ">Mohammad Jahid</h1>
                   <div className="flex items-center mt-4 text-gray-700 ">
                     <FontAwesomeIcon icon={faEnvelope} />

@@ -12,7 +12,6 @@ const CheckoutForm = ({ order }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   const { _id, price, email, name } = order;
-  console.log(order);
 
   useEffect(() => {
     const res = fetcher.post("/create-payment-intent", { price });
@@ -62,7 +61,7 @@ const CheckoutForm = ({ order }) => {
     } else {
       setCardError("");
       setTransactionId(paymentIntent?.id);
-      console.log(paymentIntent);
+
       setSuccess("Payment Successful");
 
       //store payment in database
@@ -112,7 +111,7 @@ const CheckoutForm = ({ order }) => {
           )}
           <button
             type="submit"
-            class="btn btn-primary btn-sm my-5 w-28 align"
+            className="btn btn-primary btn-sm my-5 w-28 align"
             disabled={!stripe || !clientSecret || success}
           >
             Pay

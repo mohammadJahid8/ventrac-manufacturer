@@ -52,7 +52,6 @@ const SignUp = () => {
 
   const onSubmit = async (data) => {
     const { email, password, name } = data;
-    console.log(name);
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     reset();
@@ -155,7 +154,7 @@ const SignUp = () => {
               />
             </div>
 
-            <div class="divider py-6">OR</div>
+            <div className="divider py-6">OR</div>
             <div className="field">
               <SocialLogin />
             </div>

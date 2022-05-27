@@ -7,7 +7,6 @@ import "./AddProduct.css";
 
 const AddProduct = () => {
   const [imageURL, setImageURL] = useState("");
-  console.log(imageURL);
 
   const {
     register,
@@ -28,7 +27,7 @@ const AddProduct = () => {
     };
 
     const res = fetcher.post("/tools", product);
-    console.log(res);
+
     reset();
     toast.success("New product added!!", {
       position: toast.POSITION.TOP_CENTER,
@@ -112,9 +111,9 @@ const AddProduct = () => {
               </div>
             </div>
 
-            <div class="flex flex-col w-full h-full p-1 overflow-auto">
-              <div class="flex flex-col items-center justify-center py-4 text-base transition duration-500 ease-in-out transform bg-white border border-dashed rounded-lg text-blueGray-500 focus:border-blue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
-                <p class="flex flex-wrap justify-center mb-3 text-base leading-7 text-blueGray-500">
+            <div className="flex flex-col w-full h-full p-1 overflow-auto">
+              <div className="flex flex-col items-center justify-center py-4 text-base transition duration-500 ease-in-out transform bg-white border border-dashed rounded-lg text-blueGray-500 focus:border-blue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                <p className="flex flex-wrap justify-center mb-3 text-base leading-7 text-blueGray-500">
                   <span>Drag and drop your</span>&nbsp;
                   <span>files anywhere or</span>
                 </p>
@@ -129,8 +128,8 @@ const AddProduct = () => {
               </div>
             </div>
 
-            <div class="form-control mt-6">
-              <button class="btn btn-primary   w-full">ADD PRODUCT</button>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary   w-full">ADD PRODUCT</button>
             </div>
           </div>
         </div>

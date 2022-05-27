@@ -25,10 +25,12 @@ const Payment = () => {
   return (
     <div className="flex justify-center items-center mt-12">
       <div className="">
-        <div class="card w-full bg-base-100 shadow-xl">
-          <div class="card-body">
+        <div className="card w-full bg-base-100 shadow-xl">
+          <div className="card-body">
             <p className="text-success font-bold">Hello, {order?.data?.name}</p>
-            <h2 class="card-title">Product Name : {order.data?.productName}</h2>
+            <h2 className="card-title">
+              Product Name : {order.data?.productName}
+            </h2>
             <p className="text-xl">Order Id: {id}</p>
             <p>
               Please Pay : $

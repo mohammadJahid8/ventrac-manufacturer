@@ -101,15 +101,15 @@ const MyOrders = () => {
                   {!order.paid ? (
                     <label
                       onClick={() => setDeleteOrder(order)}
-                      for="delete-confirm-modal"
-                      class="btn btn-error btn-xs "
+                      htmlFor="delete-confirm-modal"
+                      className="btn btn-error btn-xs "
                     >
                       Cancel
                     </label>
                   ) : (
                     <p>
                       Transaction Id:{" "}
-                      <span class="text-success text-xs">
+                      <span className="text-success text-xs">
                         {order.transactionId}
                       </span>
                     </p>
