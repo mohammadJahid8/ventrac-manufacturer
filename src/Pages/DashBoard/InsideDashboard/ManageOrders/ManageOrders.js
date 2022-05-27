@@ -81,27 +81,33 @@ const ManageOrders = () => {
                 <td>${order.price}</td>
                 <td>
                   {!order.paid && (
-                    <Link to={`/dashboard/payment/${order._id}`}>
-                      <button className="btn btn-success btn-xs">Unpaid</button>
-                    </Link>
+                    <p className="btn bg-green-400 btn-xs">Unpaid</p>
                   )}
                   {order.price && order.paid && (
-                    <span className="text-xs text-green-600  bg-lime-100 py-1 rounded px-2 w-10">
-                      Paid
-                    </span>
+                    <div>
+                      <span className="text-xs text-green-600  bg-lime-100 py-1 rounded px-2 w-10 inline-block mr-2">
+                        Paid
+                      </span>
+                      <span
+                        className={
+                          order.status === "Pending"
+                            ? "text-xs text-green-600  bg-orange-100 py-1 rounded px-2 w-14 inline-block"
+                            : "text-xs text-green-600  bg-gray-100 py-1 rounded px-2 w-14 inline-block"
+                        }
+                      >
+                        {order.status}
+                      </span>
+                    </div>
                   )}
                 </td>
                 <td>
                   {order.paid && (
                     <div>
-                      <span className="text-xs text-green-600  bg-lime-100 py-1 rounded px-2 w-14">
-                        {order.status}
-                      </span>
                       <button
                         onClick={() => handleApprovend(order._id)}
-                        className="text-xs text-gray-800  bg-orange-200 py-1 rounded px-2 w-14"
+                        className="text-xs text-gray-800  bg-blue-200 py-1 pr-14 rounded px-2 w-16"
                       >
-                        Approve
+                        Ship Now
                       </button>
                     </div>
                   )}

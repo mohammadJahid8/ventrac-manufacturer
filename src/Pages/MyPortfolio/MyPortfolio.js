@@ -28,35 +28,36 @@ const MyPortfolio = () => {
               </p>
             </blockquote>
             <p>Till now i have learned-</p>
-            <p>
-              <FontAwesomeIcon icon={faAngleRight} />
-              HTML
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faAngleRight} />
-              CSS
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faAngleRight} />
-              BOOTSTRAP
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faAngleRight} />
-              TAILWIND
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faAngleRight} />
-              JAVASCRIPT
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faAngleRight} />
-              REACT
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faAngleRight} />
-              MONGODB
-            </p>
-
+            <div className="pl-24">
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className="pr-2" />
+                HTML
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className="pr-2" />
+                CSS
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className="pr-2" />
+                BOOTSTRAP
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className="pr-2" />
+                TAILWIND
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className="pr-2" />
+                JAVASCRIPT
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className="pr-2" />
+                REACT
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faAngleRight} className="pr-2" />
+                MONGODB
+              </p>
+            </div>
             <p className="mt-6 text-base font-semibold text-black">
               Mohammad Jahid
             </p>
@@ -98,6 +99,8 @@ const MyPortfolio = () => {
                   <ul>
                     <p>
                       <a
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
                         href="https://assignment-12-9e0cc.web.app/?fbclid=IwAR0ETfVsOaWYkXvpP6A-LcXwWveCoogsdKj1m9MgwkNf17RPH0niOdEtN2A"
                       >
@@ -106,6 +109,7 @@ const MyPortfolio = () => {
                     </p>
                     <p>
                       <a
+                        target="_blank"
                         className="text-blue-600 hover:underline"
                         href="https://assignment-11-85553.web.app/?fbclid=IwAR2k56gpKUyfDqb3grgHrqhxGjaCRCjtM4XbK0w2LDi3X-TD-6zbcER7kfY"
                       >
@@ -114,6 +118,7 @@ const MyPortfolio = () => {
                     </p>
                     <p>
                       <a
+                        target="_blank"
                         className="text-blue-600 hover:underline"
                         href="https://flourishing-creponne-d381f1.netlify.app/?fbclid=IwAR2IaULUKF-GEK2S49n8-C_YSX3VpkByjHd0ojZcTpgsdLI0WRn-ha7BtRA"
                       >

@@ -69,7 +69,7 @@ const CheckoutForm = ({ order }) => {
       const payment = {
         order: _id,
         transactionId: paymentIntent?.id,
-        status: "pending",
+        status: "Pending",
       };
 
       const res = fetcher.patch(`/orders/${_id}`, payment);

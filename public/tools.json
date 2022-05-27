@@ -1,7 +1,7 @@
     [
         {
             "name": "Straight Claw Hammer",
-            "quantity": 550,
+            "quantity": 5550,
             "minOrder": 80,
             "price": 10,
             "image": "https://s.alicdn.com/@sc04/kf/H93270f9bf4fb4001a9d3fa3d528480beG.jpg_300x300.jpg",
@@ -9,7 +9,7 @@
         },
         {
             "name": "Bicycle Repair Tool",
-            "quantity": 600,
+            "quantity": 6050,
             "minOrder": 100,
             "price": 3,
             "image": "https://s.alicdn.com/@sc04/kf/H5ed5922e99c845f797cbf82755c95a7fF.jpg_300x300.jpg",
@@ -17,7 +17,7 @@
         },
         {
             "name": "Portable Electric Screwdriver",
-            "quantity": 400,
+            "quantity": 4500,
             "minOrder": 100,
             "price": 17,
             "image": "https://s.alicdn.com/@sc04/kf/U91116602b0144abea1607c1f2ddf5bcbB.jpg_300x300.jpg",
@@ -25,7 +25,7 @@
         },
         {
             "name": "Soldering Iron",
-            "quantity": 600,
+            "quantity": 6050,
             "minOrder": 70,
             "price": 6,
             "image": "https://s.alicdn.com/@sc04/kf/HTB1.41cB2iSBuNkSnhJq6zDcpXag.jpg_300x300.jpg",
@@ -33,7 +33,7 @@
         },
         {
             "name": "Precision Screwdriver Set",
-            "quantity": 500,
+            "quantity": 5050,
             "minOrder": 80,
             "price": 15,
             "image": "https://s.alicdn.com/@sc04/kf/HTB1X1hni25TBuNjSspmq6yDRVXat.jpg_300x300.jpg",
@@ -41,7 +41,7 @@
         },
         {
             "name": "Hammer Drill Machine",
-            "quantity": 550,
+            "quantity": 5550,
             "minOrder": 80,
             "price": 10,
             "image": "https://s.alicdn.com/@sc04/kf/H151b04970346449290b938246982c505c.png_220x220.png_.webp",
@@ -49,7 +49,7 @@
         },
         {
             "name": "Dual Ring Wrench and Screwdriver",
-            "quantity": 500,
+            "quantity": 5050,
             "minOrder": 60,
             "price": 40,
             "image": "https://s.alicdn.com/@sc04/kf/H0171e1bf5b4c4ca79b3bffa753da0e9cE.png_300x300.png",
@@ -57,7 +57,7 @@
         },
         {
             "name": "Double Speed electric Drill Machine",
-            "quantity": 700,
+            "quantity": 7050,
             "minOrder": 80,
             "price": 30,
             "image": "https://s.alicdn.com/@sc01/kf/H06dd361e5db144629e3eaf95ca15d6e01.png_480x480.png",

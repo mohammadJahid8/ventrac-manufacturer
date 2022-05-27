@@ -48,7 +48,7 @@ const Purchase = () => {
       email: user.email,
       price: totalPrice,
       image: image,
-      status: "pending",
+      status: "Pending",
     };
     const res = fetcher.post("/orders", newData);
     reset();
