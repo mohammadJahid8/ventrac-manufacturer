@@ -1,18 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import auth from "../../../../firebase.init";
 import fetcher from "../../../Shared/api/axios.config";
 import "./AddProduct.css";
 
 const AddProduct = () => {
   const [imageURL, setImageURL] = useState("");
   console.log(imageURL);
-  const [disabled, setDisabled] = useState(false);
-  const [inputQuantity, setInputQuantity] = useState();
-  const [user] = useAuthState(auth);
 
   const {
     register,
@@ -32,7 +27,6 @@ const AddProduct = () => {
       minOrder: data.minOrder,
     };
 
-    console.log(product);
     const res = fetcher.post("/tools", product);
     console.log(res);
     reset();
