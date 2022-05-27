@@ -39,7 +39,7 @@ const Tools = () => {
           <div className="-mt-16 sm:-mt-48 lg:-mt-32 xl:-mt-40 2xl:container 2xl:mx-auto flex justify-center items-center space-y-4 px-4 md:px-6 2xl:px-0 mb-16">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-between gap-x-6 gap-y-5">
               {tools?.data?.map((tool) => (
-                <div className="mx-2 w-72 lg:mb-0 mb-8 shadow-md">
+                <div className="mx-2 w-72 lg:mb-0  shadow-md">
                   <div>
                     <img src={tool.image} className="w-96" alt="" />
                   </div>
@@ -79,7 +79,7 @@ const Tools = () => {
                       <p className="text-xs text-gray-600 mt-2">
                         Minimum Order:{tool.minOrder}
                       </p>
-                      <div className="flex mt-4">
+                      <div className="flex my-4">
                         <div>
                           <p className="text-xs text-gray-600 px-2 bg-gray-200 py-1">
                             12 months warranty
@@ -90,15 +90,13 @@ const Tools = () => {
                             In Stock
                           </p>
                         </div>
+                        <div className="pl-2">
+                          <h3 className="text-indigo-700 text-base font-semibold">
+                            ${tool.price}/per
+                          </h3>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between py-4">
-                        <h2 className="text-indigo-700 text-xs font-semibold">
-                          Bay Area, San Francisco
-                        </h2>
-                        <h3 className="text-indigo-700 text-xl font-semibold">
-                          ${tool.price}/per
-                        </h3>
-                      </div>
+
                       <button
                         onClick={() => navigate(`/purchase/${tool._id}`)}
                         class="btn btn-wide btn-primary"
