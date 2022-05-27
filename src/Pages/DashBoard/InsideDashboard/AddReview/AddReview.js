@@ -88,7 +88,7 @@ const AddReview = () => {
                 className=" border rounded-lg border-transparent text-white btn btn-primary flex justify-center items-center py-4  w-full"
               >
                 <div>
-                  <p className="text-base leading-4">Place Order</p>
+                  <p className="text-base leading-4">Add Review</p>
                 </div>
               </button>
             </div>
