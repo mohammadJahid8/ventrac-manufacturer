@@ -32,7 +32,7 @@ const Banner = () => {
           <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
             Ventrac, the largest Manufacturer
             <br className="hidden md:block" />
-            Manufacturer{" "}
+            Company{" "}
             <span className="relative inline-block px-2">
               <div className="absolute inset-0 transform -skew-x-12 bg-slate-200" />
               <span className="relative text-teal-900 font-extrabold text-3xl">
