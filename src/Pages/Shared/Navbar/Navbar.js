@@ -36,7 +36,7 @@ const Navbar = ({ children }) => {
     <div className="drawer drawer-end " data-theme={dark ? "dark" : "light"}>
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content  flex flex-col  bg-white">
-        <div className="w-full navbar  lg:px-6">
+        <div className="w-full navbar sticky top-0 z-50 bg-base-100 shadow-sm lg:px-6">
           {pathname.includes("dashboard") && (
             <label
               htmlFor="my-drawer-2"

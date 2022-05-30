@@ -57,9 +57,6 @@ const MyProfile = () => {
     reset();
   };
 
-  if (isLoading) {
-    return <Loading />;
-  }
   return (
     <div>
       {/* form start */}
@@ -82,7 +79,7 @@ const MyProfile = () => {
               </div>
             </div>
 
-            <div className="card w-96 bg-base-100">
+            <div className="card w-96">
               <div className="card-body">
                 <h1 className="text-xl font-semibold ">{displayName}</h1>
                 <div className="flex items-center mt-4 text-gray-700 ">
