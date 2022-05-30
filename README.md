@@ -13,7 +13,7 @@ Open [Ventrac](https://assignment-12-9e0cc.web.app/) to view it in your browser.
 - I have used email/password and google for authentication
 - There is a blogs site which will answer some questions.
 - There is also a Portfolio route which consists of personal info.
-- At the end user will be redirected to 404 page if he tries to go any unknown page.
+- At the end user will be redirected to 404 page if he tries to go any unknown page...
 
 # Technologies used-
 
