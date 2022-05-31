@@ -29,7 +29,12 @@ const Banner = () => {
       </div>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-          <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+          <h2
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+            className="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none"
+          >
             Ventrac, the largest Manufacturer
             <br className="hidden md:block" />
             Company{" "}
@@ -40,13 +45,30 @@ const Banner = () => {
               </span>
             </span>
           </h2>
-          <p className="mb-6 text-base text-indigo-100 md:text-lg">
+          <p
+            data-aos="fade-right"
+            data-aos-delay="400"
+            data-aos-duration="900"
+            className="mb-6 text-base text-indigo-100 md:text-lg"
+          >
             The experience gained on the market, the quality assured, the
             reliability and competitiveness of the products led to a rapid
             growth of the Company on the International market.
           </p>
-          <button className="btn ">Get Started</button>
-          <p className="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16">
+          <button
+            data-aos="fade-right"
+            data-aos-delay="600"
+            data-aos-duration="800"
+            className="btn "
+          >
+            Get Started
+          </button>
+          <p
+            data-aos="fade-right"
+            data-aos-delay="800"
+            data-aos-duration="1000"
+            className="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16"
+          >
             Today Ventrac can be considered one of the leading manufacturers of
             strapping tools on a global scale.
           </p>

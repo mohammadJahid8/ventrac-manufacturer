@@ -120,12 +120,17 @@ const AddProduct = () => {
                   <span>Drag and drop your</span>&nbsp;
                   <span>files anywhere or</span>
                 </p>
-                <label htmlFor="file" className="input-file">
+                <label class="block hover:cursor-pointer">
+                  <span class="sr-only">Choose profile photo</span>
                   <input
-                    type="file"
-                    id="file"
-                    required
                     onChange={handleImage}
+                    type="file"
+                    class="block w-full text-sm text-slate-500
+                        file:mr-4 file:py-2 file:px-4
+                        file:rounded-full file:border-0
+                        file:text-sm file:font-semibold
+                        file:bg-violet-50 file:text-violet-700
+                        hover:file:bg-violet-100 hover:cursor-pointer"
                   />
                 </label>
               </div>

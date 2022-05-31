@@ -24,8 +24,14 @@ import ManageOrders from "./Pages/DashBoard/InsideDashboard/ManageOrders/ManageO
 import ManageProducts from "./Pages/DashBoard/InsideDashboard/ManageProducts/ManageProducts";
 import Payment from "./Pages/DashBoard/InsideDashboard/Payment/Payment";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="">
       <Navbar>
@@ -35,6 +41,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/portfolio" element={<MyPortfolio />} />
+
           <Route path="*" element={<NotFound />} />
           <Route element={<PrivateRoute />}>
             <Route path="/purchase/:id" element={<Purchase />} />

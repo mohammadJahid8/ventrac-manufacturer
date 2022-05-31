@@ -99,7 +99,7 @@ const Tools = () => {
 
                       <button
                         onClick={() => navigate(`/purchase/${tool._id}`)}
-                        className="btn btn-wide btn-primary"
+                        className="btn btn-wide btn-primary "
                       >
                         Place Order
                       </button>
