@@ -41,7 +41,6 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/portfolio" element={<MyPortfolio />} />
-
           <Route path="*" element={<NotFound />} />
           <Route element={<PrivateRoute />}>
             <Route path="/purchase/:id" element={<Purchase />} />
