@@ -33,7 +33,7 @@ function App() {
     AOS.init();
   }, []);
   return (
-    <div className="">
+    <div className="max-w-[90rem] mx-auto">
       <Navbar>
         <Routes>
           <Route path="/" element={<Home />} />
