@@ -27,7 +27,7 @@ const Tools = () => {
         <Loading />
       ) : (
         <div>
-          <div className="bg-gray-100 flex flex-col justify-center items-center pt-9 sm:pt-12 lg:pt-16 pb-24 sm:pb-52">
+          <div className="bg-gray-100 pt-9 sm:pt-12 lg:pt-16 pb-24 sm:pb-52">
             <div className="2xl:container 2xl:mx-auto flex flex-col justify-center items-center sm:pb-12 lg:pb-0 space-y-4 px-4 md:px-6 2xl:px-0">
               <div>
                 <p className="text-3xl lg:text-4xl font-semibold leading-9 text-center text-gray-800">
@@ -42,74 +42,48 @@ const Tools = () => {
             </div>
           </div>
           <div className="-mt-16 sm:-mt-48 lg:-mt-32 xl:-mt-40 2xl:container 2xl:mx-auto flex justify-center items-center space-y-4 px-4 md:px-6 2xl:px-0 mb-16">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-between gap-x-6 gap-y-5">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 justify-items-between gap-x-6 gap-y-5">
               {newTool?.map((tool) => (
-                <div key={tool._id} className="mx-2 w-72 lg:mb-0  shadow-md">
-                  <div>
-                    <img src={tool.image} className="w-96" alt="" />
-                  </div>
-                  <div className="bg-white">
-                    <div className="flex items-center justify-between px-4 pt-4">
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="icon icon-tabler icon-tabler-bookmark"
-                          width={20}
-                          height={20}
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="#2c3e50"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                          <path d="M9 4h6a2 2 0 0 1 2 2v14l-5-3l-5 3v-14a2 2 0 0 1 2 -2" />
-                        </svg>
-                      </div>
-                      <div className="bg-yellow-200 py-1.5 px-6 rounded-full">
-                        <p className="text-xs text-yellow-500">Featured</p>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <div className="flex items-center">
-                        <h2 className="text-lg font-semibold">{tool.name}</h2>
-                      </div>
-                      <p className="text-xs text-gray-600 mt-2">
-                        {tool.description.slice(0, 80)}...
-                      </p>
-                      <p className="text-xs text-gray-600 mt-2">
-                        Available Quantity: {tool.quantity}
-                      </p>
-                      <p className="text-xs text-gray-600 mt-2">
-                        Minimum Order:{tool.minOrder}
-                      </p>
-                      <div className="flex my-4">
-                        <div>
-                          <p className="text-xs text-gray-600 px-2 bg-gray-200 py-1">
-                            12 months warranty
-                          </p>
-                        </div>
-                        <div className="pl-2">
-                          <p className="text-xs text-gray-600 px-2 bg-orange-100 py-1">
-                            In Stock
-                          </p>
-                        </div>
-                        <div className="pl-2">
-                          <h3 className="text-indigo-700 text-base font-semibold">
-                            ${tool.price}/per
-                          </h3>
-                        </div>
-                      </div>
 
-                      <button
-                        onClick={() => navigate(`/purchase/${tool._id}`)}
-                        className="btn btn-wide btn-primary "
-                      >
-                        Place Order
-                      </button>
+                <div className="hover:shadow-xl rounded-md shadow-md bg-white text-gray-800 ">
+                  <img src={tool.image} alt="" className="w-48 md:w-full rounded-t-md h-48 md:h-72" />
+                  <div className=" p-6 ">
+
+                    <div className="">
+                      <h2 className="text-lg font-semibold">{tool.name}</h2>
                     </div>
+                    <p className="text-xs text-gray-600 mt-2">
+                      {tool.description.slice(0, 80)}...
+                    </p>
+                    <p className="text-xs text-gray-600 mt-2">
+                      Available Quantity: {tool.quantity}
+                    </p>
+                    <p className="text-xs text-gray-600 mt-2">
+                      Minimum Order:{tool.minOrder}
+                    </p>
+                    <div className="flex my-2">
+                      <div>
+                        <p className="text-xs text-gray-600 px-2 bg-gray-200 py-1">
+                          12 months warranty
+                        </p>
+                      </div>
+                      <div className="pl-2">
+                        <p className="text-xs text-gray-600 px-2 bg-orange-100 py-1">
+                          In Stock
+                        </p>
+                      </div>
+                      <div className="pl-2">
+                        <h3 className="text-indigo-700 text-base font-semibold">
+                          ${tool.price}/per
+                        </h3>
+                      </div>
+                    </div>
+
                   </div>
+                  <button
+                    onClick={() => navigate(`/purchase/${tool._id}`)}
+                    type="button" className="flex items-center justify-center w-full p-2 font-semibold tracking-wide  text-gray-100 bg-primary">
+                    Place Order</button>
                 </div>
               ))}
             </div>
