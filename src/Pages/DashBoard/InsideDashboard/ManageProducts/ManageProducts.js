@@ -63,7 +63,7 @@ const ManageProducts = () => {
                 <td>
                   <label
                     onClick={() => setDeleteProduct(tool)}
-                    htmlFor="delete-product-modal"
+                    htmlFor="delete-bill-modal"
                     className="btn btn-error btn-xs "
                   >
                     Delete
