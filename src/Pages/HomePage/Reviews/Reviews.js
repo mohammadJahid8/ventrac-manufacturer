@@ -5,6 +5,10 @@ import { useQuery } from "react-query";
 import fetcher from "../../Shared/api/axios.config";
 import Loading from "../../Shared/Loading/Loading";
 
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 const Reviews = () => {
   //reviews loaded from database by axios custom api using react query
   const { data: reviews, isLoading } = useQuery("reviews", () =>
@@ -15,8 +19,38 @@ const Reviews = () => {
     return <Loading />;
   }
 
+  const options = {
+    margin: 20,
+    responsiveClass: true,
+    nav: true,
+    dots: true,
+    autoplay: true,
+    navText: ["<", ">"],
+    smartSpeed: 1000,
+    autoplayTimeout: 3000,
+    rewind: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      700: {
+        items: 3,
+      },
+      1000: {
+        items: 3,
+
+      }
+    },
+  };
+
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
           <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-accent">
@@ -57,56 +91,59 @@ const Reviews = () => {
         </p>
       </div>
 
-      <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {reviews?.data?.map((review, index) => (
-          <div key={index}>
-            <div className="flex flex-col justify-between p-5 border rounded shadow-sm ">
-              <div>
-                <div className="">
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className={
-                      review.rating > 0 ? "text-yellow-300" : "text-gray-300"
-                    }
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className={
-                      review.rating > 1 ? "text-yellow-300" : "text-gray-300"
-                    }
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className={
-                      review.rating > 2 ? "text-yellow-300" : "text-gray-300"
-                    }
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className={
-                      review.rating > 3 ? "text-yellow-300" : "text-gray-300"
-                    }
-                  />
-                  <FontAwesomeIcon
-                    icon={faStar}
-                    className={
-                      review.rating > 4 ? "text-yellow-300" : "text-gray-300"
-                    }
-                  />
+      <div className="">
+        <OwlCarousel className='auto' {...options}>
+          {reviews?.data?.map((review, index) => (
+
+            <div key={index}>
+              <div className="flex flex-col justify-between p-5 border rounded shadow-sm">
+                <div>
+                  <div className="">
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className={
+                        review.rating > 0 ? "text-yellow-300" : "text-gray-300"
+                      }
+                    />
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className={
+                        review.rating > 1 ? "text-yellow-300" : "text-gray-300"
+                      }
+                    />
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className={
+                        review.rating > 2 ? "text-yellow-300" : "text-gray-300"
+                      }
+                    />
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className={
+                        review.rating > 3 ? "text-yellow-300" : "text-gray-300"
+                      }
+                    />
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className={
+                        review.rating > 4 ? "text-yellow-300" : "text-gray-300"
+                      }
+                    />
+                  </div>
+                  <p className=" text-sm text-gray-900 my-2">
+                    Rating:{review.rating}
+                  </p>
+                  <p className=" text-sm text-gray-900">"{review.comment}"</p>
                 </div>
-                <p className=" text-sm text-gray-900 my-2">
-                  Rating:{review.rating}
+                <p className="mt-0 pr-2  flex justify-end font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 text-blue-800">
+                  __{review.name}
                 </p>
-                <p className=" text-sm text-gray-900">"{review.comment}"</p>
               </div>
-              <p className="mt-0 pr-2  flex justify-end font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 text-blue-800">
-                __{review.name}
-              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </OwlCarousel >
       </div>
-    </div>
+    </div >
   );
 };
 
